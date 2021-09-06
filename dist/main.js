@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=(()=>{let t=document.getElementById("content"),e=document.createElement("div");return e.setAttribute("id","taskBody"),t.appendChild(e),{taskBody:e}})();(()=>{let e=document.createElement("div"),d=document.createElement("div");e.setAttribute("id","titleDom"),d.setAttribute("id","descDom"),t.taskBody.appendChild(e),t.taskBody.appendChild(d)})()})();
