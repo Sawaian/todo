@@ -13,17 +13,39 @@ const taskBody = (()=>{
 
 // Generates dom for title.
 const taskForm = (() => {
-    let title = document.createElement("div");
-        let description = document.createElement("div");
+    //Creates form.
+    let form = document.createElement("form")
+        form.setAttribute("method", "get");
+        // form.setAttribute("action", "submit.php");
+
+        let title = document.createElement("input");
+            title.setAttribute("name", "title");
+            title.setAttribute("type", "text");
             title.setAttribute("id", "titleDom");
+
+        let description = document.createElement("input");
+            description.setAttribute("name", "desc");
+            description.setAttribute("type", "text");
             description.setAttribute("id", "descDom");
-            taskBody.taskBody.appendChild(title);
-        taskBody.taskBody.appendChild(description);
+
+        let submit = document.createElement("input");
+            submit.setAttribute('type', "submit");
+            submit.setAttribute('id', "submit");
+
+                
+            form.appendChild(title);
+            form.appendChild(description);
+            form.appendChild(submit);
+            taskBody.taskBody.appendChild(form);
 })();
 
+// Loads both of the dom elements.
 const taskDomGen = (() => {
     taskForm();
     taskBody();
 })
 
 export { taskDomGen }
+
+// s.setAttribute('type',"submit");
+// s.setAttribute('value',"Submit");
