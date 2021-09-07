@@ -11,6 +11,7 @@ const taskBody = (()=>{
     }
 })();
 
+// create a dom for the get of title. 
 // Generates dom for title.
 const taskForm = (() => {
     //Creates form.
