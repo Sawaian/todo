@@ -46,6 +46,3 @@ const taskDomGen = (() => {
 })
 
 export { taskDomGen }
-
-// s.setAttribute('type',"submit");
-// s.setAttribute('value',"Submit");
