@@ -1,5 +1,5 @@
 
-
+//create a get for the local storage. 
 
 
 const task = (() => {
@@ -33,7 +33,7 @@ const task = (() => {
         taskArray.push(newTask)
         
         // Stores values into task obj. 
-            localStorage.setItem('title', title);
+            localStorage.setItem('title' + 1, title);
 
         console.table(taskArray);
             
