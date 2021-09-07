@@ -17,7 +17,12 @@ const taskDisplay = (() => {
     titleDisplay.setAttribute("id", "titleDisplay");
     taskCard.display.appendChild(titleDisplay);
 
+    let descriptionDisplay = document.createElement("text");
+    descriptionDisplay.setAttribute("id", "descDisplay");
+    taskCard.display.appendChild(descriptionDisplay);
+
     titleDisplay.textContent = localStorage.getItem("title");
+
 })();
 
 function taskBundle(){

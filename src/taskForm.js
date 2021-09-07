@@ -2,8 +2,23 @@
 //create a get for the local storage. 
 
 
+const initializeTaskNum = (() => {
+    let i = 0;
+    localStorage.setItem("taskNum", i );
+    function incrementI(){
+        i++;
+    }
+
+    return {
+        incrementI,
+    }
+})();
+
+
 const task = (() => {
-    
+  
+  let i = localStorage.getItem(taskNum);
+
   const taskObj = (title, description) => {
     let taskTitle= title;
     let taskDescription = description;
@@ -24,7 +39,9 @@ const task = (() => {
 
     submit.addEventListener('click', ()=>{
 
-        
+        localStorage.setItem("taskNum", i)
+            initializeTaskNum.incrementI();
+            
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
         let newTask = null;
@@ -46,8 +63,8 @@ const task = (() => {
 
     })();
 
-  
+    
 
 
 
-    export { task }
+    export { task, initializeTaskNum}
