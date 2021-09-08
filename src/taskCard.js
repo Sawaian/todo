@@ -16,16 +16,23 @@ const taskCard = (() => {
 // populate task display
 const taskDisplay = (() => {
 
-    for(let i = 0; i < localStorage.length; i++ ){
-    let parsed = JSON.parse(localStorage.getItem("title" + [i]));
+    localStorage.forEach(element => {
 
-    let titleDisplay = document.createElement("text");
-    titleDisplay.setAttribute("id", "titleDisplay");
+        let titleDisplay  = document.createElement("text");
+    titleDisplay[i].setAttribute("id", "titleDisplay" + [i]);
     taskCard.display.appendChild(titleDisplay);
 
     let descriptionDisplay = document.createElement("text");
-    descriptionDisplay.setAttribute("id", "descDisplay");
+    descriptionDisplay.setAttribute("id", "descDisplay" + i);
     taskCard.display.appendChild(descriptionDisplay);
+
+
+    })
+
+    for(let i = 0; i < localStorage.length; i++ ){
+    let parsed = JSON.parse(localStorage.getItem("title" + [i]));
+
+    
 
 
     titleDisplay.textContent = parsed.title;
