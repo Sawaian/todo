@@ -11,8 +11,11 @@ const taskCard = (() => {
         }
 })();
 
+
+
 // populate task display
 const taskDisplay = (() => {
+
     let titleDisplay = document.createElement("text");
     titleDisplay.setAttribute("id", "titleDisplay");
     taskCard.display.appendChild(titleDisplay);
@@ -22,6 +25,7 @@ const taskDisplay = (() => {
     taskCard.display.appendChild(descriptionDisplay);
 
     titleDisplay.textContent = localStorage.getItem("title");
+    descriptionDisplay.textContent = localStorage.getItem("description")
 
 })();
 
