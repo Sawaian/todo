@@ -25,21 +25,14 @@ const taskDisplay = (() => {
     taskCard.display.appendChild(descriptionDisplay);
 
     let parsed = JSON.parse(localStorage.getItem("title2"));
-    let taskData = parsed;
 
-    let strBuilder = [];
-    for(property in taskData){
-        if(taskData.hasOwnProperty(key)){
-            strBuilder.push("Key is " + key + ", value is " + jsonObj[key] + "\n");
-        }
-    }
 
-    alert(strBuilder.join(""));
+    titleDisplay.textContent = parsed.title;
+    descriptionDisplay.textContent = parsed.description;
 
-    titleDisplay.textContent = taskData;
-    descriptionDisplay.textContent = "me"
+    
 
-    console.table(taskData.title);
+    console.table(parsed);
 
 })();
 
