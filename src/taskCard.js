@@ -24,8 +24,22 @@ const taskDisplay = (() => {
     descriptionDisplay.setAttribute("id", "descDisplay");
     taskCard.display.appendChild(descriptionDisplay);
 
-    titleDisplay.textContent = localStorage.getItem("title");
-    descriptionDisplay.textContent = localStorage.getItem("description")
+    let parsed = JSON.parse(localStorage.getItem("title2"));
+    let taskData = parsed;
+
+    let strBuilder = [];
+    for(property in taskData){
+        if(taskData.hasOwnProperty(key)){
+            strBuilder.push("Key is " + key + ", value is " + jsonObj[key] + "\n");
+        }
+    }
+
+    alert(strBuilder.join(""));
+
+    titleDisplay.textContent = taskData;
+    descriptionDisplay.textContent = "me"
+
+    console.table(taskData.title);
 
 })();
 

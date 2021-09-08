@@ -1,0 +1,26 @@
+#content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". titleDom descDom ."
+    ". titleDisplay descDisplay ."
+    
+    ;
+}
+
+#titleDom{
+    grid-area: titleDom;
+}
+
+#descDom{
+    grid-area: descDom;
+}
+
+#titleDisplay{
+    grid-area: titleDisplay;
+}
+
+#descDisplay{
+    grid-area: descDisplay;
+}
