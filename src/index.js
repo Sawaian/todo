@@ -1,7 +1,7 @@
 import { taskDomGen } from "./taskDom";
 import { task } from "./taskForm";
 import { taskBundle } from "./taskCard";
-
+import './styles.css';
 
     task.taskStorage();
    taskBundle();
