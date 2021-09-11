@@ -4,11 +4,23 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     ". titleDom descDom ."
-    ". titleDisplay descDisplay ."
+    ". taskBody taskBody ."
+    ". taskBody taskBody ."
     
     ;
 }
 
+#taskBody{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-area: taskBody;
+    grid-template-areas: 
+    ". titleDisplay . ."
+    ". descDisplay . ."
+    
+    ;
+}
 #titleDom{
     grid-area: titleDom;
 }
