@@ -3,11 +3,23 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    ". titleDom descDom ."
-    ". taskBody taskBody ."
-    ". taskBody taskBody ."
+    "sidebar taskBody taskBody ."
+    "sidebar display display ."
+    "sidebar display display ."
     
     ;
+}
+
+#sidebar{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "inbox"
+    "today"
+    "thisWeek"
+    "Projects"
+    "."
+    "addProjects";
 }
 
 #taskBody{
@@ -15,12 +27,20 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-area: taskBody;
-    grid-template-areas: 
-    ". titleDisplay . ."
-    ". descDisplay . ."
-    
-    ;
+    grid-template-areas: none;
 }
+
+#display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-area: display;
+    grid-template-areas:
+     ". title0 desc0 ." 
+     ". title1 desc1 .";
+}
+
+
 #titleDom{
     grid-area: titleDom;
 }
@@ -29,10 +49,18 @@
     grid-area: descDom;
 }
 
-#titleDisplay{
-    grid-area: titleDisplay;
+#title0{
+    grid-area: title0;
 }
 
-#descDisplay{
-    grid-area: descDisplay;
+#desc0{
+    grid-area: desc0;
+}
+
+#title1{
+    grid-area: title1;
+}
+
+#desc1{
+    grid-area: desc1;
 }
