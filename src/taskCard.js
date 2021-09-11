@@ -16,25 +16,18 @@ const taskCard = (() => {
 // populate task display
 const taskDisplay = (() => {
 
-    let titleDisplay  = document.createElement("text");
-    titleDisplay.setAttribute("id", "titleDisplay");
-    taskCard.display.appendChild(titleDisplay);
-
-    let descriptionDisplay = document.createElement("text");
-    descriptionDisplay.setAttribute("id", "descDisplay" );
-    taskCard.display.appendChild(descriptionDisplay);
-
-
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
+        let task = JSON.parse(localStorage.getItem(key));
 
         let titleDisplay = document.createElement("text");
         titleDisplay.setAttribute("id", "title" + i);
-        titleDisplay.textContent = key.title;
+        titleDisplay.textContent = task.title; 
         taskCard.display.appendChild(titleDisplay);
 
         let descriptionDisplay = document.createElement("text");
-        descriptionDisplay.setAttribute("id", "title" + i);
+        descriptionDisplay.setAttribute("id", "desc" + i);
+        descriptionDisplay.textContent = task.description;
         taskCard.display.appendChild(descriptionDisplay);
 
         console.log(`${key}: ${localStorage.getItem(key)}`);
@@ -42,7 +35,7 @@ const taskDisplay = (() => {
     
 
 
-    let parsed = JSON.parse(localStorage.getItem("title" + 2));
+    // let parsed = JSON.parse(localStorage.getItem("title" + 2));
 
     
 
@@ -51,7 +44,7 @@ const taskDisplay = (() => {
 //     descriptionDisplay.textContent = parsed.description;
 //     }
 
-    console.table(parsed);
+    // console.table(parsed);
 
 })();
 
