@@ -3,6 +3,18 @@
 
 const task = (() => {
 
+    let taskNumber;
+
+    if(localStorage.getItem(taskNumber) != null){
+        taskNumber = localStorage.getItem(taskNumber);
+        console.log("evaluating local");
+    }
+    else{
+        taskNumber = 0;
+        console.log("local not working.")
+    }
+
+ 
 
   const taskObj = (title, description) => {
 
@@ -23,7 +35,7 @@ const task = (() => {
     //Event click which stores the values of the fields.
     submit.addEventListener('click', ()=>{
 
-
+        taskNumber++;
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
         let newTask = null;
@@ -31,8 +43,10 @@ const task = (() => {
         newTask = taskObj(title, description)
         taskArray.push(newTask)
         
-        // Stores values into task obj. 
-            localStorage.setItem('title' + 1, JSON.stringify(newTask));
+        // Stores values into task obj.
+            localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
+            localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
+            
 
         console.table(taskArray);
             

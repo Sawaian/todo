@@ -51,7 +51,7 @@ const taskForm = (() => {
 
         let addTask = document.createElement("div");
             addTask.setAttribute("class","addTask");
-            addTask.setAttribute("id","addTask")
+            addTask.setAttribute("id","addTask");
             addTask.textContent = "+";
 
                 
