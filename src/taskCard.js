@@ -22,11 +22,13 @@ const taskDisplay = (() => {
 
         let titleDisplay = document.createElement("text");
         titleDisplay.setAttribute("id", "title" + i);
+        titleDisplay.setAttribute("class", "taskDisplay");
         titleDisplay.textContent = task.title; 
         taskCard.display.appendChild(titleDisplay);
 
         let descriptionDisplay = document.createElement("text");
         descriptionDisplay.setAttribute("id", "desc" + i);
+        descriptionDisplay.setAttribute("class", "taskDisplay")
         descriptionDisplay.textContent = task.description;
         taskCard.display.appendChild(descriptionDisplay);
 

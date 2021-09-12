@@ -37,7 +37,6 @@
 .addTask{
     background-color: white;
     border-radius: 20px;
-    border-width: thin;
     border: thin solid;
     cursor: pointer;
     font-size: 20px;
@@ -47,6 +46,16 @@
     align-items: center;
     padding: 2px;
     display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 14px;
+    margin: 10px;
+}
+
+.taskDisplay{
+    width: 50%;
+    display: block;
+    margin: 15px auto;
 }
 
 #sidebar{
