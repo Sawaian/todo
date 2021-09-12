@@ -33,15 +33,21 @@ const taskForm = (() => {
             title.setAttribute("name", "title");
             title.setAttribute("type", "text");
             title.setAttribute("id", "titleDom");
+            title.setAttribute("class","input")
 
         let description = document.createElement("input");
             description.setAttribute("name", "desc");
             description.setAttribute("type", "text");
             description.setAttribute("id", "descDom");
+            description.setAttribute("class","input")
 
         let submit = document.createElement("input");
             submit.setAttribute('type', "submit");
             submit.setAttribute('id', "submit");
+
+        let close = document.createElement("div");
+            close.setAttribute("class","close");
+            close.textContent = "+";
 
                 
             form.appendChild(title);
@@ -50,6 +56,7 @@ const taskForm = (() => {
             modal.appendChild(form);
             taskBody.content.appendChild(bgModal);
             bgModal.appendChild(modal);
+            modal.appendChild(close);
 })();
 
 // Loads both of the dom elements.
