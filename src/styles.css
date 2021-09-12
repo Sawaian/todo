@@ -41,6 +41,51 @@
 }
 
 
+#inbox{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr;
+    /* max-width: 400px; */
+    grid-template-areas: "image . .";
+    padding-left: 10px;
+}
+
+#inboxImage{
+    display:block;
+    width: 30px;
+    height: auto;
+    grid-area: image;
+}
+
+#today{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr;
+    /* max-width: 400px; */
+    grid-template-areas: "image . .";
+    padding-left: 10px;
+}
+
+#todayImage{
+    display:block;
+    width: 30px;
+    height: auto;
+    grid-area: image;
+}
+
+#thisWeek{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr;
+    /* max-width: 400px; */
+    grid-template-areas: "image . .";
+    padding-left: 10px;
+}
+
+#calendarImage{
+    display:block;
+    width: 30px;
+    height: auto;
+    grid-area: image;
+}
+
 #titleDom{
     grid-area: titleDom;
 }
@@ -64,3 +109,4 @@
 #desc1{
     grid-area: desc1;
 }
+
