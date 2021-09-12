@@ -8,6 +8,7 @@ const taskBody = (()=>{
 
     return {
         taskBody,
+        content,
     }
 })();
 
@@ -15,6 +16,15 @@ const taskBody = (()=>{
 // Generates dom for title.
 const taskForm = (() => {
     //Creates form.
+
+    let bgModal= document.createElement("div");
+            bgModal.setAttribute("name", "title");
+            bgModal.setAttribute("class", "bgModal");
+
+    let modal = document.createElement("div");
+            modal.setAttribute("class", "modal");
+
+
     let form = document.createElement("form")
         form.setAttribute("method", "get");
         // form.setAttribute("action", "submit.php");
@@ -37,7 +47,9 @@ const taskForm = (() => {
             form.appendChild(title);
             form.appendChild(description);
             form.appendChild(submit);
-            taskBody.taskBody.appendChild(form);
+            modal.appendChild(form);
+            taskBody.content.appendChild(bgModal);
+            bgModal.appendChild(modal);
 })();
 
 // Loads both of the dom elements.
