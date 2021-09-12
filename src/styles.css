@@ -19,6 +19,7 @@
     top: 0;
     justify-content: center;
     align-items: center;
+    display: none;
     
 }
 
@@ -31,6 +32,21 @@
     padding: 20px;
     position:relative;
    
+}
+
+.addTask{
+    background-color: white;
+    border-radius: 20px;
+    border-width: thin;
+    border: thin solid;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    display: flex;
 }
 
 #sidebar{

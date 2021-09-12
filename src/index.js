@@ -6,6 +6,15 @@ import './styles.css';
 
     task.taskStorage();
    taskBundle();
+
+   const newTask = (() => {
+       document.getElementById("addTask").addEventListener("click", ()=>{
+           document.querySelector(".bgModal").style.display = 'flex';
+       })
+       document.querySelector(".close").addEventListener("click", ()=>{
+           document.querySelector(".bgModal").style.display = 'none';
+       })
+   })();
    
 
    const tabSideBbar = () => {

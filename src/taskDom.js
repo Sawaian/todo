@@ -49,14 +49,21 @@ const taskForm = (() => {
             close.setAttribute("class","close");
             close.textContent = "+";
 
+        let addTask = document.createElement("div");
+            addTask.setAttribute("class","addTask");
+            addTask.setAttribute("id","addTask")
+            addTask.textContent = "+";
+
                 
             form.appendChild(title);
             form.appendChild(description);
             form.appendChild(submit);
             modal.appendChild(form);
+
             taskBody.content.appendChild(bgModal);
             bgModal.appendChild(modal);
             modal.appendChild(close);
+            taskBody.taskBody.appendChild(addTask);
 })();
 
 // Loads both of the dom elements.
