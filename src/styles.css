@@ -151,7 +151,7 @@
 #submit{
     background-color: white;
     border-radius: 20px;
-    border: thin solid;
+    border: thick solid;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;

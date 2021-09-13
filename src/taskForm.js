@@ -9,7 +9,7 @@ const task = (() => {
         return ++taskNumber;
     }
 
-    if(localStorage.getItem(taskNumber) != null){
+    if(localStorage.getItem(taskNumber) === null){
         taskNumber = 0;
         console.log("local not working.")
     }
