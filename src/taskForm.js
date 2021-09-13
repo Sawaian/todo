@@ -4,17 +4,13 @@
 const task = (() => {
 
     let taskNumber;
-    
-    function incrementTask(){
-        return ++taskNumber;
-    }
 
-    if(localStorage.getItem(taskNumber) === null){
-        taskNumber = 0;
+    if(localStorage.getItem('taskNumber')){
+        taskNumber = parseInt(localStorage.getItem('taskNumber'));
         console.log("local not working.")
     }
     else{
-        taskNumber = localStorage.getItem(taskNumber);
+        taskNumber = 0;
         console.log("evaluating local");
     }
 
@@ -46,7 +42,7 @@ const task = (() => {
     //Event click which stores the values of the fields.
     submit.addEventListener('click', ()=>{
 
-        incrementTask();
+        taskNumber++;
 
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
