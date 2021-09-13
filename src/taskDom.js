@@ -25,8 +25,8 @@ const taskForm = (() => {
             modal.setAttribute("class", "modal");
 
 
-    let form = document.createElement("form")
-        form.setAttribute("method", "get");
+    let form = document.createElement("div");
+    
         // form.setAttribute("action", "submit.php");
 
         let title = document.createElement("input");
@@ -41,8 +41,7 @@ const taskForm = (() => {
             description.setAttribute("id", "descDom");
             description.setAttribute("class","input")
 
-        let submit = document.createElement("input");
-            submit.setAttribute('type', "submit");
+        let submit = document.createElement("button");
             submit.setAttribute('id', "submit");
 
         let close = document.createElement("div");

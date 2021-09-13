@@ -15,7 +15,6 @@ import './styles.css';
            document.querySelector(".bgModal").style.display = 'none';
        })
    })();
-   
 
    const tabSideBbar = () => {
        

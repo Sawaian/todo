@@ -148,6 +148,24 @@
     margin: 15px auto;
 }
 
+#submit{
+    background-color: white;
+    border-radius: 20px;
+    border: thin solid;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 14px;
+    margin: 10px;
+}
+
 
 #title0{
     grid-area: title0;

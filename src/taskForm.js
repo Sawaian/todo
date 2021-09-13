@@ -4,16 +4,25 @@
 const task = (() => {
 
     let taskNumber;
+    
+    function incrementTask(){
+        return ++taskNumber;
+    }
 
     if(localStorage.getItem(taskNumber) != null){
-        taskNumber = localStorage.getItem(taskNumber);
-        console.log("evaluating local");
-    }
-    else{
         taskNumber = 0;
         console.log("local not working.")
     }
+    else{
+        taskNumber = localStorage.getItem(taskNumber);
+        console.log("evaluating local");
+    }
 
+    const closeTask = (() => {
+        document.querySelector("#submit").addEventListener("click", ()=>{
+            document.querySelector(".bgModal").style.display = 'none';
+        });
+    })();
  
 
   const taskObj = (title, description) => {
@@ -31,11 +40,14 @@ const task = (() => {
     function taskStorage(){
     let submit = document.getElementById("submit");
 
+  
+
 
     //Event click which stores the values of the fields.
     submit.addEventListener('click', ()=>{
 
-        taskNumber++;
+        incrementTask();
+
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
         let newTask = null;
@@ -46,8 +58,6 @@ const task = (() => {
         // Stores values into task obj.
             localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
-            
-
         console.table(taskArray);
             
     })};
