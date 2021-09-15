@@ -1,11 +1,10 @@
-import { taskDomGen } from "./taskDom";
+import { bgTask } from "./taskDom";
 import { task } from "./taskForm";
-import { taskBundle } from "./taskCard";
+import { taskDisplay } from "./taskCard";
 import { sideBar  } from "./sidebar";
 import './styles.css';
 
     task.taskStorage();
-   taskBundle();
 
    const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
@@ -15,6 +14,19 @@ import './styles.css';
            document.querySelector(".bgModal").style.display = 'none';
        })
    })();
+
+   const closeCurrentTask = (() =>{
+
+    document.querySelector(".close").addEventListener("click", ()=>{
+        document.querySelector(".bgTask").style.display = 'none';
+
+        while( bgTask.modalTask.firstChild) {
+            bgTask.modalTask.removeChild( bgTask.modalTask.firstChild);
+        }
+    })
+
+
+   })
 
    const tabSideBbar = () => {
        

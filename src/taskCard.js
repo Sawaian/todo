@@ -1,4 +1,6 @@
-import { taskForm } from "./taskDom";
+import { bgTask} from "./taskDom";
+
+
 // Holds all the tasks in the display field. 
 const taskList = (() => {
     let content = document.getElementById("content");
@@ -18,6 +20,7 @@ const taskList = (() => {
 const taskDisplay = (() => {
 
     for (let i = 0; i < localStorage.length; i++) {
+
         const key = localStorage.key(i);
         let task = JSON.parse(localStorage.getItem(key));
 
@@ -29,16 +32,23 @@ const taskDisplay = (() => {
 
         console.log(`${key}: ${localStorage.getItem(key)}`);
 
+        
+
         titleDisplay.addEventListener('click',()=>{
-            document.querySelector(".bgModal").style.display = 'flex';
+            document.querySelector(".bgTask").style.display = 'flex';
             let taskDisplay = document.createElement("div");
             taskDisplay.setAttribute("class", "taskModal");
-            taskForm.bgModal.appendChild(taskDisplay);
+            bgTask.modalTask.appendChild(taskDisplay);
 
             let titleDisplay = document.createElement("li");
                 titleDisplay.setAttribute("class", "titleDisplay");
                 titleDisplay.textContent = task.title; 
                 taskDisplay.appendChild(titleDisplay);
+
+            // Will be used to close element.
+            let close = document.createElement("div");
+                close.setAttribute("class", "close2");
+                taskDisplay.appendChild(close);
         })
     }
     
@@ -57,8 +67,6 @@ const taskDisplay = (() => {
 
 })();
 
-function taskBundle(){
 
-}
 
-export { taskBundle }
+export { taskDisplay }

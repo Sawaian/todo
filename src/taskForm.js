@@ -60,6 +60,7 @@ const task = (() => {
 
     return{
         taskStorage,
+        
     };
 
     })();
