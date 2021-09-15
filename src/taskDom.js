@@ -104,13 +104,32 @@ const bgTask =(() => {
     let modalTask = document.createElement("div");
             modalTask.setAttribute("class", "modalTask");
             bgTask.appendChild(modalTask);
+
+            function taskCloseButton(){
+                let close = document.createElement("div");
+                close.setAttribute("class", "close2");
+                    modalTask.appendChild(close);
+            }
+
+
+            taskCloseButton();
+
+
+        // Will be used to close element.
+       
             
         return{
             bgTask,
             modalTask,
+            taskCloseButton,
         }
 
 })();
+
+
+
+
+
 
 // Loads both of the dom elements.
 const taskDomGen = (() => {
@@ -118,4 +137,4 @@ const taskDomGen = (() => {
     taskBody();
 })
 
-export { taskDomGen, bgTask }
+export { taskDomGen, bgTask}

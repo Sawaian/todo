@@ -51,7 +51,7 @@
 .close2{
     width: 20px;
     height: 20px;
-    border: thick;
+    border: solid;
 }
 
 .bgTask{
@@ -74,6 +74,9 @@
     border-radius: 4px;
     padding: 20px;
     position:relative;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 

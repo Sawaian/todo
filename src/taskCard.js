@@ -8,6 +8,7 @@ const taskList = (() => {
         display.setAttribute("id", "display");
         content.appendChild(display);
 
+
         return {
             display,
             content,
@@ -45,10 +46,11 @@ const taskDisplay = (() => {
                 titleDisplay.textContent = task.title; 
                 taskDisplay.appendChild(titleDisplay);
 
-            // Will be used to close element.
-            let close = document.createElement("div");
-                close.setAttribute("class", "close2");
-                taskDisplay.appendChild(close);
+                bgTask.taskCloseButton();
+
+                
+
+            
         })
     }
     

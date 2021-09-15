@@ -15,9 +15,11 @@ import './styles.css';
        })
    })();
 
+   // closes the task card.
    const closeCurrentTask = (() =>{
 
-    document.querySelector(".close").addEventListener("click", ()=>{
+    document.querySelector(".close2").addEventListener("click", ()=>{
+        console.log("clicked");
         document.querySelector(".bgTask").style.display = 'none';
 
         while( bgTask.modalTask.firstChild) {
@@ -26,7 +28,7 @@ import './styles.css';
     })
 
 
-   })
+   })();
 
    const tabSideBbar = () => {
        

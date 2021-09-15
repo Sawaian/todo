@@ -54,13 +54,13 @@ const task = (() => {
         // Stores values into task obj.
             localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
-        console.table(taskArray);
+
             
     })};
 
     return{
         taskStorage,
-        
+
     };
 
     })();
