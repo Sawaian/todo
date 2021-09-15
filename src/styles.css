@@ -66,10 +66,13 @@
     margin: 10px;
 }
 
-.taskDisplay{
+.taskTitle{
     width: 50%;
     display: block;
     margin: 15px auto;
+    border-radius: 4px;
+    border: solid;
+    grid-template-areas: task;
 }
 
 #sidebar{
@@ -100,13 +103,13 @@
 }
 
 #display{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; */
     grid-area: display;
-    grid-template-areas:
-     ". title0 desc0 ." 
-     ". title1 desc1 .";
+    /* grid-template-areas:
+     ". task ." 
+     ". task ."; */
 }
 
 
@@ -208,3 +211,16 @@
     grid-area: desc1;
 }
 
+@media only screen and (max-width: 500px) {
+    #content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.0fr 1.2fr 1.2fr 1.2fr;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "display"
+        "taskBody"
+        ;
+    }
+    
+}

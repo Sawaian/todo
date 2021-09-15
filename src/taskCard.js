@@ -1,8 +1,8 @@
 
 // Holds all the tasks in the display field. 
-const taskCard = (() => {
+const taskList = (() => {
     let content = document.getElementById("content");
-    let display = document.createElement("div");
+    let display = document.createElement("ul");
         display.setAttribute("id", "display");
         content.appendChild(display);
 
@@ -20,17 +20,11 @@ const taskDisplay = (() => {
         const key = localStorage.key(i);
         let task = JSON.parse(localStorage.getItem(key));
 
-        let titleDisplay = document.createElement("text");
+        let titleDisplay = document.createElement("li");
         titleDisplay.setAttribute("id", "title" + i);
-        titleDisplay.setAttribute("class", "taskDisplay");
+        titleDisplay.setAttribute("class", "taskTitle");
         titleDisplay.textContent = task.title; 
-        taskCard.display.appendChild(titleDisplay);
-
-        let descriptionDisplay = document.createElement("text");
-        descriptionDisplay.setAttribute("id", "desc" + i);
-        descriptionDisplay.setAttribute("class", "taskDisplay")
-        descriptionDisplay.textContent = task.description;
-        taskCard.display.appendChild(descriptionDisplay);
+        taskList.display.appendChild(titleDisplay);
 
         console.log(`${key}: ${localStorage.getItem(key)}`);
     }
