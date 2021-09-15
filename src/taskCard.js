@@ -1,4 +1,4 @@
-
+import { taskForm } from "./taskDom";
 // Holds all the tasks in the display field. 
 const taskList = (() => {
     let content = document.getElementById("content");
@@ -8,6 +8,7 @@ const taskList = (() => {
 
         return {
             display,
+            content,
         }
 })();
 
@@ -27,6 +28,18 @@ const taskDisplay = (() => {
         taskList.display.appendChild(titleDisplay);
 
         console.log(`${key}: ${localStorage.getItem(key)}`);
+
+        titleDisplay.addEventListener('click',()=>{
+            document.querySelector(".bgModal").style.display = 'flex';
+            let taskDisplay = document.createElement("div");
+            taskDisplay.setAttribute("class", "taskModal");
+            taskForm.bgModal.appendChild(taskDisplay);
+
+            let titleDisplay = document.createElement("li");
+                titleDisplay.setAttribute("class", "titleDisplay");
+                titleDisplay.textContent = task.title; 
+                taskDisplay.appendChild(titleDisplay);
+        })
     }
     
 

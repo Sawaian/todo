@@ -25,13 +25,6 @@ const taskBody = (()=>{
 const taskForm = (() => {
     //Creates form.
 
-    let bgModal= document.createElement("div");
-            bgModal.setAttribute("name", "title");
-            bgModal.setAttribute("class", "bgModal");
-
-    let modal = document.createElement("div");
-            modal.setAttribute("class", "modal");
-
 
     let form = document.createElement("div");
     
@@ -51,27 +44,62 @@ const taskForm = (() => {
 
         let submit = document.createElement("button");
             submit.setAttribute('id', "submit");
-
-        let close = document.createElement("div");
-            close.setAttribute("class","close");
-            close.textContent = "+";
-
-        let addTask = document.createElement("div");
-            addTask.setAttribute("class","addTask");
-            addTask.setAttribute("id","addTask");
-            addTask.textContent = "+";
-
                 
             form.appendChild(title);
             form.appendChild(description);
             form.appendChild(submit);
-            modal.appendChild(form);
+            background.modal.appendChild(form);
 
-            taskBody.content.appendChild(bgModal);
-            bgModal.appendChild(modal);
-            modal.appendChild(close);
-            taskBody.taskBody.appendChild(addTask);
+        
+
+    
 })();
+
+const background = (() => {
+
+
+    let bgModal= document.createElement("div");
+            bgModal.setAttribute("name", "title");
+            bgModal.setAttribute("class", "bgModal");
+
+    let modal = document.createElement("div");
+            modal.setAttribute("class", "modal");
+
+
+    let close = document.createElement("div");
+            close.setAttribute("class","close");
+            close.textContent = "+";
+
+    let addTask = document.createElement("div");
+            addTask.setAttribute("class","addTask");
+            addTask.setAttribute("id","addTask");
+            addTask.textContent = "+";
+
+
+        taskBody.content.appendChild(bgModal);
+        bgModal.appendChild(modal);
+        modal.appendChild(close);
+        taskBody.taskBody.appendChild(addTask);
+
+        return{
+            modal,
+        }
+
+})();
+
+// Generates dark background for when task related elements are selected.
+const bgTask =(() => {
+
+
+    let bgTask= document.createElement("div");
+            bgTask.setAttribute("name", "title");
+            bgTask.setAttribute("class", "bgModal");
+
+    let modal = document.createElement("div");
+            modal.setAttribute("class", "modal");
+
+
+})
 
 // Loads both of the dom elements.
 const taskDomGen = (() => {
@@ -79,4 +107,4 @@ const taskDomGen = (() => {
     taskBody();
 })
 
-export { taskDomGen }
+export { taskDomGen, taskForm }
