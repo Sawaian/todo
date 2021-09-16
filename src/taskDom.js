@@ -16,6 +16,8 @@ const taskBody = (()=>{
     }
 })();
 
+
+// Creates a background for the add task event.
 const background = (() => {
 
 
@@ -70,10 +72,26 @@ const taskForm = (() => {
 
         let submit = document.createElement("button");
             submit.setAttribute('id', "submit");
+
+        let priorityLow = document.createElement("button");
+                 priorityLow.setAttribute('id', "low");
+                 priorityLow.textContent = "Low";
+
+        let priorityMedium = document.createElement("button");
+                 priorityMedium.setAttribute('id', "medium");
+                 priorityMedium.textContent = "Medium";
+
+        let priorityHigh = document.createElement("button");
+                 priorityHigh.setAttribute('id', "high");
+                 priorityHigh.textContent = "High";
+
                 
             form.appendChild(title);
             form.appendChild(description);
             form.appendChild(submit);
+            form.appendChild(priorityLow);
+            form.appendChild(priorityMedium);
+            form.appendChild(priorityHigh);
             background.modal.appendChild(form);
 
 })();

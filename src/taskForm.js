@@ -21,20 +21,36 @@ const task = (() => {
     })();
  
 
+// constructor for objects
   const taskObj = (title, description) => {
+
+    let priority;
 
     return {
         title,
         description,
+        priority,
     }
 }
 
     // Stores objects.
     let taskArray = [];
+    let priorityChosen;
 
     // Stores form inputs to local storage. 
     function taskStorage(){
     let submit = document.getElementById("submit");
+
+    const priorityLevel = (() =>{
+        document.getElementById("low").addEventListener('click', () =>{
+            priorityChosen ="low";
+        })
+
+        document.getElementById("medium").addEventListener('click', () =>{
+            priorityChosen ="medium";
+        })
+
+    })();
 
 
     //Event click which stores the values of the fields.
@@ -46,8 +62,13 @@ const task = (() => {
         let description = document.getElementById("descDom").value;
         let newTask = null;
 
-        newTask = taskObj(title, description)
+        newTask = taskObj(title, description);
+
+        newTask.priority = priorityChosen;
+
         taskArray.push(newTask)
+
+        console.log(newTask.priority);
         
         // Stores values into task obj.
             localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
