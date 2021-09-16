@@ -36,8 +36,6 @@ const task = (() => {
     function taskStorage(){
     let submit = document.getElementById("submit");
 
-  
-
 
     //Event click which stores the values of the fields.
     submit.addEventListener('click', ()=>{

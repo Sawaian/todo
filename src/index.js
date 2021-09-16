@@ -23,8 +23,8 @@ import './styles.css';
 
         document.querySelector(".bgTask").style.display = 'none';
 
-        while( taskDivDisplay.firstChild) {
-            taskDivDisplay.removeChild( bgTask.modalTask.firstChild);
+        while(  taskDivDisplay.taskDisplay.firstChild) {
+            taskDivDisplay.taskDisplay.removeChild( taskDivDisplay.taskDisplay.firstChild);
         }
     });
 
