@@ -50,16 +50,24 @@ const task = (() => {
             priorityChosen ="medium";
         })
 
+        document.getElementById("high").addEventListener('click', () =>{
+            priorityChosen ="high";
+        })
+
     })();
 
 
     //Event click which stores the values of the fields.
     submit.addEventListener('click', ()=>{
-
-        taskNumber++;
-
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
+
+       if(title == ""){
+           alert("Input title");
+           console.log("null read");
+       }
+       else 
+       {taskNumber++;
         let newTask = null;
 
         newTask = taskObj(title, description);
@@ -73,7 +81,7 @@ const task = (() => {
         // Stores values into task obj.
             localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
-
+}
             
     })};
 

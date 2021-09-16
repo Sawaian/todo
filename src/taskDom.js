@@ -188,7 +188,7 @@ const taskDisplay = (() => {
      
             openTask.openTask();
 
-            let titleDisplay = document.createElement("li");
+            let titleDisplay = document.createElement("div");
                 titleDisplay.setAttribute("class", "titleDisplay");
                 titleDisplay.textContent = task.title; 
                 taskDivDisplay.taskDisplay.appendChild(titleDisplay);
