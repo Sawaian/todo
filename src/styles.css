@@ -67,6 +67,7 @@
 }
 
 .modalTask{
+    display:flex;
     width: 500px;
     height: 300px;
     background-color: white;
@@ -74,9 +75,9 @@
     border-radius: 4px;
     padding: 20px;
     position:relative;
-    display: grid;
     grid-template-columns:  1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    display: none;
 }
 
 
@@ -96,6 +97,10 @@
     bottom: 0;
     right: 14px;
     margin: 10px;
+}
+
+.taskDisplay{
+    display: none;
 }
 
 .taskTitle{

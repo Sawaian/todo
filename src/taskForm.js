@@ -14,7 +14,7 @@ const task = (() => {
         console.log("evaluating local");
     }
 
-    const closeTask = (() => {
+    const closeTaskForm = (() => {
         document.querySelector("#submit").addEventListener("click", ()=>{
             document.querySelector(".bgModal").style.display = 'none';
         });
