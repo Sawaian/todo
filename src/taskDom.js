@@ -90,6 +90,7 @@ const taskForm = (() => {
         let dueDate = document.createElement("input");
                  dueDate.setAttribute("type", "date");
                  dueDate.setAttribute("class", "date");
+                 dueDate.setAttribute("id", "dueDate");
                
 
                 
@@ -191,9 +192,9 @@ const taskDisplay = (() => {
                 titleDisplay.textContent = task.title; 
                 taskDivDisplay.taskDisplay.appendChild(titleDisplay);
 
-            let dueDate = document.createElement("input");
-                dueDate.setAttribute("type", "date");
+            let dueDate = document.createElement("div");
                 dueDate.setAttribute("class", "date");
+                dueDate.textContent = task.date;
                 taskDivDisplay.taskDisplay.appendChild(dueDate);
         })
 

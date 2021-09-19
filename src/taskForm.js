@@ -22,13 +22,14 @@ const task = (() => {
  
 
 // constructor for objects
-  const taskObj = (title, description) => {
+  const taskObj = (title, description, date) => {
 
     let priority;
 
     return {
         title,
         description,
+        date,
         priority,
     }
 }
@@ -61,16 +62,18 @@ const task = (() => {
     submit.addEventListener('click', ()=>{
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
+        let taskDate = document.getElementById("dueDate").value;
 
-       if(title == ""){
+    if(title == ""){
            alert("Input title");
            console.log("null read");
        }
-       else 
-       {taskNumber++;
+    else 
+       {
+        taskNumber++;
         let newTask = null;
 
-        newTask = taskObj(title, description);
+        newTask = taskObj(title, description, taskDate);
 
         newTask.priority = priorityChosen;
 
