@@ -87,6 +87,11 @@ const taskForm = (() => {
                  priorityHigh.setAttribute('id', "high");
                  priorityHigh.textContent = "High";
 
+        let dueDate = document.createElement("input");
+                 dueDate.setAttribute("type", "date");
+                 dueDate.setAttribute("class", "date");
+               
+
                 
             form.appendChild(title);
             form.appendChild(description);
@@ -94,6 +99,7 @@ const taskForm = (() => {
             form.appendChild(priorityLow);
             form.appendChild(priorityMedium);
             form.appendChild(priorityHigh);
+            form.appendChild(dueDate);
             background.modal.appendChild(form);
 
 })();
@@ -130,7 +136,7 @@ const bgTask =(() => {
 
 })();
 
-
+// A div used to tidplsay the task while being edited.
 const taskDivDisplay = (() =>{
     
     let taskDisplay = document.createElement("div");
@@ -184,7 +190,13 @@ const taskDisplay = (() => {
                 titleDisplay.setAttribute("class", "titleDisplay");
                 titleDisplay.textContent = task.title; 
                 taskDivDisplay.taskDisplay.appendChild(titleDisplay);
+
+            let dueDate = document.createElement("input");
+                dueDate.setAttribute("type", "date");
+                dueDate.setAttribute("class", "date");
+                taskDivDisplay.taskDisplay.appendChild(dueDate);
         })
+
     }
 
 })();
