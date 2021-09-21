@@ -1,26 +1,30 @@
 
 //create a get for the local storage. 
 
+let taskArray = [];
+
 const task = (() => {
 
-    let taskNumber;
+//     let taskNumber;
 
-    if(localStorage.getItem('taskNumber')){
-        taskNumber = parseInt(localStorage.getItem('taskNumber'));
-        console.log("local not working.")
+//     if(localStorage.getItem('taskNumber')){
+//         taskNumber = parseInt(localStorage.getItem('taskNumber'));
+//     }
+//     else{
+//         taskNumber = 0;
+//     }
+
+//     const closeTaskForm = (() => {
+//         document.querySelector("#submit").addEventListener("click", ()=>{
+//             document.querySelector(".bgModal").style.display = 'none';
+//         });
+//     })();
+
+
+    if(localStorage.getItem('taskArray')){
+        taskArray = JSON.parse(localStorage.getItem('taskArray'));
+        console.log(taskArray);
     }
-    else{
-        taskNumber = 0;
-        console.log("evaluating local");
-    }
-
-    const closeTaskForm = (() => {
-        document.querySelector("#submit").addEventListener("click", ()=>{
-            document.querySelector(".bgModal").style.display = 'none';
-        });
-    })();
- 
-
 // constructor for objects
   const taskObj = (title, description, date) => {
 
@@ -35,7 +39,6 @@ const task = (() => {
 }
 
     // Stores objects.
-    let taskArray = [];
     let priorityChosen;
 
     // Stores form inputs to local storage. 
@@ -73,7 +76,7 @@ const task = (() => {
         taskNumber++;
         let newTask = null;
 
-        newTask = taskObj(title, description, taskDate);
+        newTask = taskObj(title, description, taskDate); 
 
         newTask.priority = priorityChosen;
 
@@ -82,8 +85,10 @@ const task = (() => {
         console.log(newTask.priority);
         
         // Stores values into task obj.
-            localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
-            localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
+        // Stores array into localStorage. 
+            localStorage.setItem('taskArray', JSON.stringify(taskArray));
+            // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
+            // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
 }
             
     })};
@@ -95,4 +100,4 @@ const task = (() => {
 
     })();
 
-    export { task }
+    export { task, taskArray}
