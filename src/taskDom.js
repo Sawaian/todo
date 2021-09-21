@@ -3,7 +3,6 @@ import { taskArray } from "./taskForm";
 
 const taskList = (() => {
     let content = document.getElementById("content");
-      let body = document.getElementById("body");
         let display = document.createElement("ul");
             display.setAttribute("id", "display");
              content.appendChild(display);

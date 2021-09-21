@@ -5,6 +5,13 @@ let taskArray = [];
 
 const task = (() => {
 
+    // const closeTaskForm = (() =>{
+    //     document.querySelector("#submit").addEventListener("click", ()=>{
+    //         document.querySelector(".bgModal").style.display = 'none';
+    //   });
+    // })();
+
+
 //     let taskNumber;
 
 //     if(localStorage.getItem('taskNumber')){
@@ -14,11 +21,7 @@ const task = (() => {
 //         taskNumber = 0;
 //     }
 
-//     const closeTaskForm = (() => {
-//         document.querySelector("#submit").addEventListener("click", ()=>{
-//             document.querySelector(".bgModal").style.display = 'none';
-//         });
-//     })();
+   
 
 
     if(localStorage.getItem('taskArray')){
@@ -43,7 +46,8 @@ const task = (() => {
 
     // Stores form inputs to local storage. 
     function taskStorage(){
-    let submit = document.getElementById("submit");
+    
+        let submit = document.getElementById("submit");
 
     const priorityLevel = (() =>{
         document.getElementById("low").addEventListener('click', () =>{
@@ -73,16 +77,19 @@ const task = (() => {
        }
     else 
        {
-        taskNumber++;
+
         let newTask = null;
 
         newTask = taskObj(title, description, taskDate); 
 
         newTask.priority = priorityChosen;
 
+
         taskArray.push(newTask)
 
         console.log(newTask.priority);
+         
+        document.querySelector(".bgModal").style.display = 'none';
         
         // Stores values into task obj.
         // Stores array into localStorage. 
