@@ -49,6 +49,16 @@ const task = (() => {
 
     // Stores form inputs to local storage. 
     function taskStorage(){
+
+        function depopulate(){
+            let display = getElementById("display");
+            let taskTitle = querySelectorAll("taskTitle");
+
+            display.forEach(element => {
+                if(element === taskTitle)
+                display.removeChild(element);
+            });
+        }
     
         let submit = document.getElementById("submit");
 
@@ -97,7 +107,8 @@ const task = (() => {
         // Stores values into task obj.
         // Stores array into localStorage. 
             localStorage.setItem('taskArray', JSON.stringify(taskArray));
-
+           
+            depopulate();
            taskDisplay.populateDisplay();
             // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
