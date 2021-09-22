@@ -51,13 +51,12 @@ const task = (() => {
     function taskStorage(){
 
         function depopulate(){
-            let display = getElementById("display");
-            let taskTitle = querySelectorAll("taskTitle");
-
-            display.forEach(element => {
-                if(element === taskTitle)
-                display.removeChild(element);
-            });
+            let display = document.getElementById("display");
+            let taskTitle = document.querySelectorAll("taskTitle");
+            let taskItems = display.getElementsByTagName("li");
+            for(let i = 0; i < taskItems.length; ++i){
+                display.removeChild(taskItems[i]);
+            }
         }
     
         let submit = document.getElementById("submit");
