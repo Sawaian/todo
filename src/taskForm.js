@@ -1,4 +1,7 @@
 
+
+import { taskDisplay } from "./taskDom";
+
 //create a get for the local storage. 
 
 let taskArray = [];
@@ -94,6 +97,8 @@ const task = (() => {
         // Stores values into task obj.
         // Stores array into localStorage. 
             localStorage.setItem('taskArray', JSON.stringify(taskArray));
+
+           taskDisplay.populateDisplay();
             // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
 }

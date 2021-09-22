@@ -168,6 +168,7 @@ const taskDivDisplay = (() =>{
 // populate task display
 const taskDisplay = (() => {
 
+    function populateDisplay(){
     for (let i = 0; i < 1; i++) {
         taskArray.forEach(element => {
 
@@ -199,8 +200,14 @@ const taskDisplay = (() => {
                 taskDivDisplay.taskDisplay.appendChild(dueDate);
         })
 
-    });
+    });}
 }
+
+    populateDisplay();
+
+    return {
+        populateDisplay,
+    }
 
 })();
 
@@ -213,4 +220,4 @@ const taskDomGen = (() => {
     taskBody();
 })
 
-export { taskDomGen, bgTask, taskDivDisplay}
+export { taskDomGen, bgTask, taskDivDisplay, taskDisplay}
