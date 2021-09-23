@@ -55,7 +55,11 @@ const task = (() => {
             let taskTitle = document.querySelectorAll("taskTitle");
             let taskItems = display.getElementsByTagName("li");
             for(let i = 0; i < taskItems.length; ++i){
-                display.removeChild(taskItems[i]);
+                display.removeChild(taskItems[i])
+            }
+
+            while(display.taskItems) {
+                display.removeChild(display.taskItems);
             }
         }
     
