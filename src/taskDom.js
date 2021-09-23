@@ -43,7 +43,7 @@ const background = (() => {
         taskList.content.appendChild(bgModal);
         bgModal.appendChild(modal);
         modal.appendChild(close);
-        taskList.display.appendChild(addTask);
+        taskList.content.appendChild(addTask);
 
         return{
             modal,
