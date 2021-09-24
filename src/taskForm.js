@@ -8,24 +8,6 @@ let taskArray = [];
 
 const task = (() => {
 
-    // const closeTaskForm = (() =>{
-    //     document.querySelector("#submit").addEventListener("click", ()=>{
-    //         document.querySelector(".bgModal").style.display = 'none';
-    //   });
-    // })();
-
-
-//     let taskNumber;
-
-//     if(localStorage.getItem('taskNumber')){
-//         taskNumber = parseInt(localStorage.getItem('taskNumber'));
-//     }
-//     else{
-//         taskNumber = 0;
-//     }
-
-   
-
 
     if(localStorage.getItem('taskArray')){
         taskArray = JSON.parse(localStorage.getItem('taskArray'));

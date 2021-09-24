@@ -4,6 +4,8 @@ import { taskDisplay } from "./taskCard";
 import { sideBar  } from "./sidebar";
 import './styles.css';
 
+const {format} = require('date-fns');
+
     task.taskStorage();
 
 const newTask = (() => {
@@ -32,22 +34,17 @@ const closeCurrentTask = (() =>{
 
 const todayTask = (() => {
 
-    function dateToday(){
-       let today = Date();
-        console.log(today);
-        return today;
-    }
+    const today =format(new Date(),'yyyy-MM-dd');
 
-    function todaysProjects(){
-       let dueToday = taskArray.filter(taskDue => taskDue.date == Date());
+
+       let dueToday = taskArray.filter(taskDue => taskDue.date === today);
+
        console.table(dueToday);
-    }
+       console.log(today);
+    
 
     return {
-        dateToday,
-        todaysProjects,
     }
 })();
 
-todayTask.dateToday();
 
