@@ -6,7 +6,7 @@ import './styles.css';
 
     task.taskStorage();
 
-   const newTask = (() => {
+const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
            document.querySelector(".bgModal").style.display = 'flex';
        });
@@ -16,7 +16,7 @@ import './styles.css';
    })();
 
    // closes the task card.
-   const closeCurrentTask = (() =>{
+const closeCurrentTask = (() =>{
 
     document.querySelector(".close2").addEventListener("click", ()=>{
         console.log("clicked");
@@ -30,8 +30,19 @@ import './styles.css';
 
 })();
 
+const todayTask = (() => {
 
+    function dueToday(){
+       let dateToday = Date();
+        console.log(dateToday);
+    }
 
+    return {
+        dueToday,
+    }
+})();
+
+todayTask.dueToday();
 console.log("this page is working.");
 console.log("this update is working.");
 console.log("sixth update");
