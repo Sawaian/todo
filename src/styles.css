@@ -22,7 +22,7 @@
 html{
     box-sizing: border-box;
 }
-*, *::beofre, *::after{
+*, *::before, *::after{
     box-sizing: inherits;
 }
 

@@ -1,5 +1,5 @@
 import { bgTask, taskDivDisplay } from "./taskDom";
-import { task } from "./taskForm";
+import { task, taskArray } from "./taskForm";
 import { taskDisplay } from "./taskCard";
 import { sideBar  } from "./sidebar";
 import './styles.css';
@@ -32,17 +32,22 @@ const closeCurrentTask = (() =>{
 
 const todayTask = (() => {
 
-    function dueToday(){
-       let dateToday = Date();
-        console.log(dateToday);
+    function dateToday(){
+       let today = Date();
+        console.log(today);
+        return today;
+    }
+
+    function todaysProjects(){
+       let dueToday = taskArray.filter(taskDue => taskDue.date == Date());
+       console.table(dueToday);
     }
 
     return {
-        dueToday,
+        dateToday,
+        todaysProjects,
     }
 })();
 
-todayTask.dueToday();
-console.log("this page is working.");
-console.log("this update is working.");
-console.log("sixth update");
+todayTask.dateToday();
+
