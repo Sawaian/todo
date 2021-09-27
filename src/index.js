@@ -25,14 +25,28 @@ const closeCurrentTask = (() =>{
 
         document.querySelector(".bgTask").style.display = 'none';
 
+        clearDisplay();
+    });
+
+    function clearDisplay(){
         while(  taskDivDisplay.taskDisplay.firstChild) {
             taskDivDisplay.taskDisplay.removeChild( taskDivDisplay.taskDisplay.firstChild);
         }
-    });
+    }
+    
+    return {
+        clearDisplay,
+    }
 
 })();
 
 const todayTask = (() => {
+
+    document.querySelector("#today").addEventListener("click", ()=>{
+        // hide
+        task.depopulate()
+        console.log("listen");
+    })
 
     const today =format(new Date(),'yyyy-MM-dd');
 
@@ -45,6 +59,8 @@ const todayTask = (() => {
 
     return {
     }
+
+
 })();
 
 

@@ -13,6 +13,15 @@ const task = (() => {
         taskArray = JSON.parse(localStorage.getItem('taskArray'));
         console.log(taskArray);
     }
+
+// Removes the tasks from display. Used in conjuction with adding tasks and switching between storage tasks.
+    function depopulate(){
+        let display = document.getElementById("display");
+            while(display.firstChild){
+            display.removeChild(display.firstChild);
+        }
+    }
+
 // constructor for objects
   const taskObj = (title, description, date) => {
 
@@ -32,14 +41,6 @@ const task = (() => {
     // Stores form inputs to local storage. 
     function taskStorage(){
 
-        function depopulate(){
-            let display = document.getElementById("display");
-            let taskTitle = document.querySelectorAll("taskTitle");
-            let taskItems = display.getElementsByTagName("li");
-                while(display.firstChild){
-                display.removeChild(display.firstChild);
-            }
-        }
     
         let submit = document.getElementById("submit");
 
@@ -97,10 +98,10 @@ const task = (() => {
             
     })};
 
-    return{
+    return {
+        depopulate,
         taskStorage,
-
-    };
+    }
 
     })();
 
