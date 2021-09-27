@@ -1,6 +1,6 @@
 import { bgTask, taskDivDisplay } from "./taskDom";
 import { task, taskArray } from "./taskForm";
-import { taskDisplay } from "./taskCard";
+import { taskDisplay } from "./taskDom";
 import { sideBar  } from "./sidebar";
 import './styles.css';
 
@@ -61,6 +61,13 @@ const todayTask = (() => {
     }
 
 
+})();
+
+const inbox = (() => {
+    document.querySelector("#inbox").addEventListener("click", ()=>{
+        taskDisplay.populateDisplay();
+        console.log("inbox populated");
+    })
 })();
 
 
