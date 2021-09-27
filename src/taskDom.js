@@ -168,9 +168,9 @@ const taskDivDisplay = (() =>{
 // populate task display
 const taskDisplay = (() => {
 
-    function populateDisplay(){
+    function populateDisplay(currentArray){
     for (let i = 0; i < 1; i++) {
-        taskArray.forEach(element => {
+        currentArray.forEach(element => {
 
         
 
@@ -203,7 +203,7 @@ const taskDisplay = (() => {
     });}
 }
 
-    populateDisplay();
+    populateDisplay(taskArray);
 
     return {
         populateDisplay,

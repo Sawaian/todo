@@ -91,7 +91,7 @@ const task = (() => {
             localStorage.setItem('taskArray', JSON.stringify(taskArray));
            
             depopulate();
-           taskDisplay.populateDisplay();
+           taskDisplay.populateDisplay(taskArray);
             // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
 }

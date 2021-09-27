@@ -4,9 +4,14 @@ import { taskDisplay } from "./taskDom";
 import { sideBar  } from "./sidebar";
 import './styles.css';
 
+
 const {format} = require('date-fns');
 
     task.taskStorage();
+
+
+let inboxBtn = true;
+let todayBtn = false;
 
 const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
@@ -42,32 +47,37 @@ const closeCurrentTask = (() =>{
 
 const todayTask = (() => {
 
-    document.querySelector("#today").addEventListener("click", ()=>{
-        // hide
-        task.depopulate()
-        console.log("listen");
-    })
 
-    const today =format(new Date(),'yyyy-MM-dd');
+    const today = format(new Date(),'yyyy-MM-dd');
 
 
-       let dueToday = taskArray.filter(taskDue => taskDue.date === today);
+       let dueToday = taskArray.filter(taskDue => taskDue.date == today);
 
        console.table(dueToday);
        console.log(today);
-    
 
-    return {
-    }
+
+    document.querySelector("#today").addEventListener("click", ()=>
+    {
+        // hide
+     if(todayBtn === false)
+        {   inboxBtn = true;
+            task.depopulate()
+            taskDisplay.populateDisplay(dueToday);
+            console.log("listen");
+        }
+    })
 
 
 })();
 
 const inbox = (() => {
-    document.querySelector("#inbox").addEventListener("click", ()=>{
-        taskDisplay.populateDisplay();
+    document.querySelector("#inbox").addEventListener("click", ()=>
+    {
+        if(inboxBtn === false){
+        taskDisplay.populateDisplay(taskArray);}
         console.log("inbox populated");
-    })
+    });
 })();
 
 
