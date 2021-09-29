@@ -61,10 +61,11 @@ const todayTask = (() => {
     {
         // hide
      if(todayBtn === false)
-        {   inboxBtn = true;
+        {   inboxBtn = false;
+            todayBtn = true;
             task.depopulate()
             taskDisplay.populateDisplay(dueToday);
-            console.log("listen");
+            console.log(dueToday);
         }
     })
 
@@ -74,9 +75,12 @@ const todayTask = (() => {
 const inbox = (() => {
     document.querySelector("#inbox").addEventListener("click", ()=>
     {
-        if(inboxBtn === false){
-        taskDisplay.populateDisplay(taskArray);}
-        console.log("inbox populated");
+        if(inboxBtn === false)
+        {   todayBtn = false;
+            inboxBtn = true;
+            task.depopulate();
+            taskDisplay.populateDisplay(taskArray);}
+            console.log("inbox populated");
     });
 })();
 
