@@ -151,8 +151,7 @@ const taskDivDisplay = (() =>{
 // Holds all the tasks in the display field. 
 
 
-
-    const openCurrentTask = () => {
+const openCurrentTask = () => {
         function openTask(){
         document.querySelector(".bgTask").style.display = 'flex';
         document.querySelector(".modalTask").style.display = 'flex';
@@ -198,6 +197,16 @@ const taskDisplay = (() => {
                 dueDate.setAttribute("class", "date");
                 dueDate.textContent = element.date;
                 taskDivDisplay.taskDisplay.appendChild(dueDate);
+
+            let completeTask = document.createElement("button");
+                // completeTask.setAttribute("class", "button");
+                completeTask.setAttribute("id", "removeBtn");
+                completeTask.textContent = "remove";
+                taskDivDisplay.taskDisplay.appendChild(completeTask);
+            
+                document.getElementById("removeBtn").addEventListener("click", () => {
+                    console.log("removed");
+                });
         })
 
     });}
