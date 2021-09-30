@@ -6,6 +6,7 @@ import './styles.css';
 
 
 const {format} = require('date-fns');
+const lastDayOfWeek = require('date-fns/lastDayOfWeek')
 
     task.taskStorage();
 
@@ -53,7 +54,7 @@ const todayTask = (() => {
 
 
        let dueToday = taskArray.filter(taskDue => taskDue.date == today);
-       let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today);
+      
 
 
        console.table(dueToday);
@@ -90,6 +91,9 @@ const inbox = (() => {
 })();
 
 const thisWeek = (() => {
+
+    const today = format(new Date(),'yyyy-MM-dd');
+    let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
     document.querySelector("#thisWeek").addEventListener("click", ()=> {
         if(weekBtn === false)
         {   todayBtn = false;
@@ -98,7 +102,6 @@ const thisWeek = (() => {
             task.depopulate();
             taskDisplay.populateDisplay(dueThisWeek);
         }
-            console.log("thisWeek populated");
 
         })
     })();
