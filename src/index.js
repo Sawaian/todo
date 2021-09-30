@@ -12,6 +12,7 @@ const {format} = require('date-fns');
 
 let inboxBtn = true;
 let todayBtn = false;
+let weekBtn = false;
 
 const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
@@ -52,6 +53,8 @@ const todayTask = (() => {
 
 
        let dueToday = taskArray.filter(taskDue => taskDue.date == today);
+       let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today);
+
 
        console.table(dueToday);
        console.log(today);
@@ -61,8 +64,9 @@ const todayTask = (() => {
     {
         // hide
      if(todayBtn === false)
-        {   inboxBtn = false;
-            todayBtn = true;
+        {   todayBtn = true;
+            inboxBtn = false;  
+            weekBtn = false;  
             task.depopulate()
             taskDisplay.populateDisplay(dueToday);
             console.log(dueToday);
@@ -78,10 +82,24 @@ const inbox = (() => {
         if(inboxBtn === false)
         {   todayBtn = false;
             inboxBtn = true;
+            weekBtn = false;
             task.depopulate();
             taskDisplay.populateDisplay(taskArray);}
             console.log("inbox populated");
     });
 })();
 
+const thisWeek = (() => {
+    document.querySelector("#thisWeek").addEventListener("click", ()=> {
+        if(weekBtn === false)
+        {   todayBtn = false;
+            inboxBtn = false;
+            weekBtn = true;
+            task.depopulate();
+            taskDisplay.populateDisplay(dueThisWeek);
+        }
+            console.log("thisWeek populated");
+
+        })
+    })();
 
