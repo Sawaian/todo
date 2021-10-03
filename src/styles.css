@@ -1,15 +1,10 @@
 #content{
-  display: grid;
+  display: flex;
   max-width: 100%;
   overflow: hidden;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 0.5fr repeat(4, 1fr);
-  margin:10px;
-  padding-top: 40px;
-  grid-template-areas:
-
-  "sidebar display display display display"
-  "sidebar display display display display"
+  margin-top: 100px;
 }
 
 *{
@@ -35,7 +30,6 @@ html{
     width: 100%;    
     top: 0;
     font-size: 30px;
-    grid-area: header;
 }
 
 .bgModal, .bgTask{
@@ -136,6 +130,9 @@ html{
     align-content: center;
     justify-content: flex-start;
     min-width: 0;
+    height: auto;
+    order: 1;
+
 }
 
 #taskBody{
@@ -220,6 +217,9 @@ html{
 #display{
     display: flex;
     flex-direction: column;
+    order: 2;
+    flex: 2;
+    grid-area: display;
 }
 
 #submit{
@@ -243,10 +243,10 @@ html{
 
 @media only screen and (max-width: 500px) {
     #content{
+        display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 0.4fr 0.4fr 2.0fr 1.2fr 1.2fr 1.2fr;
         grid-template-areas: 
-        "header"
         "sidebar"
         "display"
         "taskBody"
