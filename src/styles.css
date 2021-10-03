@@ -1,14 +1,13 @@
 #content{
-    display: grid;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(5, 20vmin);
-  grid-template-rows: 0.5fr repeat(4, 20vmin);
+  display: grid;
+  max-width: 100%;
+  overflow: hidden;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 0.5fr repeat(4, 1fr);
+  margin:10px;
+  padding-top: 40px;
   grid-template-areas:
 
-  "header header header header header"
   "sidebar display display display display"
   "sidebar display display display display"
 }
@@ -30,11 +29,13 @@ html{
     border: solid;
     background-color: royalblue;
     color: wheat;
-    padding: 60px;
+    padding: 30px;
     box-sizing: border-box;
     position:fixed;
     width: 100%;    
     top: 0;
+    font-size: 30px;
+    grid-area: header;
 }
 
 .bgModal, .bgTask{
@@ -80,6 +81,18 @@ html{
     grid-template-columns:  1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     display: none;
+}
+
+.taskModal{
+    display:flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    padding: 10px;
+    position:relative;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 
@@ -168,6 +181,10 @@ html{
     width: 30px;
     height: auto;
     grid-area: image;
+   
+}
+
+#today #thisWeek #todayImage #calendarImage{
     cursor: pointer;
 }
 
@@ -184,7 +201,6 @@ html{
     width: 30px;
     height: auto;
     grid-area: image;
-    cursor: pointer;
 }
 
 .close{

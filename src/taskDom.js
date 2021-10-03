@@ -10,6 +10,7 @@ const taskList = (() => {
 
              let header = document.createElement("header");
                 header.setAttribute("class", "header");
+                header.textContent = "The Due List"
                    content.appendChild(header);
 
         return {
@@ -137,7 +138,7 @@ const bgTask =(() => {
 
 })();
 
-// A div used to tidplsay the task while being edited.
+// A div used to display the task while being edited.
 const taskDivDisplay = (() =>{
     
     let taskDisplay = document.createElement("div");
@@ -190,20 +191,28 @@ const taskDisplay = (() => {
             openTask.openTask();
 
             let titleDisplay = document.createElement("div");
-                titleDisplay.setAttribute("class", "titleDisplay");
-                titleDisplay.textContent = element.title; 
-                taskDivDisplay.taskDisplay.appendChild(titleDisplay);
-
             let dueDate = document.createElement("div");
-                dueDate.setAttribute("class", "date");
-                dueDate.textContent = element.date;
-                taskDivDisplay.taskDisplay.appendChild(dueDate);
-
             let completeTask = document.createElement("button");
-                // completeTask.setAttribute("class", "button");
+            let description = document.createElement("div");
+
+                titleDisplay.setAttribute("class", "titleDisplay");
+                description.setAttribute("class", "description");
+                dueDate.setAttribute("class", "date");
                 completeTask.setAttribute("id", "removeBtn");
+
+                titleDisplay.textContent = element.title; 
+                dueDate.textContent = element.date;
+                description.textContent = element.description;
                 completeTask.textContent = "remove";
+     
+
+           
+                // completeTask.setAttribute("class", "button");
+         
+                taskDivDisplay.taskDisplay.appendChild(dueDate);
                 taskDivDisplay.taskDisplay.appendChild(completeTask);
+                taskDivDisplay.taskDisplay.appendChild(titleDisplay);
+                taskDivDisplay.taskDisplay.appendChild(description);
             
 
                 // Removes the element task from the array.
