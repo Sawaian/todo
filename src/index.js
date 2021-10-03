@@ -25,17 +25,19 @@ const newTask = (() => {
    })();
 
    // closes the task card.
-const closeCurrentTask = (() =>{
+const closeTask = (() =>{
 
     document.querySelector(".close2").addEventListener("click", ()=>{
         console.log("clicked");
-
-        document.querySelector(".bgTask").style.display = 'none';
-
         clearDisplay();
     });
 
+    function clearBG(){
+        document.querySelector(".bgTask").style.display = 'none';
+    }
+
     function clearDisplay(){
+                   clearBG();
         while(  taskDivDisplay.taskDisplay.firstChild) {
             taskDivDisplay.taskDisplay.removeChild( taskDivDisplay.taskDisplay.firstChild);
         }
@@ -106,3 +108,4 @@ const thisWeek = (() => {
         })
     })();
 
+export { closeTask }
