@@ -1,5 +1,3 @@
-
-
 import { taskDisplay } from "./taskDom";
 
 //create a get for the local storage. 
@@ -70,28 +68,19 @@ const task = (() => {
            alert("Input title");
            console.log("null read");
        }
-    else 
+      else 
        {
-
         let newTask = null;
-
-        newTask = taskObj(title, description, taskDate); 
-
-        newTask.priority = priorityChosen;
-
-
-        taskArray.push(newTask)
-
-        console.log(newTask.priority);
-         
-        document.querySelector(".bgModal").style.display = 'none';
+            newTask = taskObj(title, description, taskDate); 
+                newTask.priority = priorityChosen;
+                    taskArray.push(newTask)
+                document.querySelector(".bgModal").style.display = 'none';
         
         // Stores values into task obj.
         // Stores array into localStorage. 
             localStorage.setItem('taskArray', JSON.stringify(taskArray));
-           
-            depopulate();
-           taskDisplay.populateDisplay(taskArray);
+                depopulate();
+                    taskDisplay.populateDisplay(taskArray);
             // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
 }

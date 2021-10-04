@@ -10,11 +10,6 @@ const lastDayOfWeek = require('date-fns/lastDayOfWeek')
 
     task.taskStorage();
 
-
-let inboxBtn = true;
-let todayBtn = false;
-let weekBtn = false;
-
 const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
            document.querySelector(".bgModal").style.display = 'flex';
@@ -49,63 +44,54 @@ const closeTask = (() =>{
 
 })();
 
-const todayTask = (() => {
-
+const changeTaskPage = (() => {
 
     const today = format(new Date(),'yyyy-MM-dd');
+    let dueToday = taskArray.filter(taskDue => taskDue.date == today);
+    let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
+
+    function refreshPage(page){
+        switch(page){
+            case 0:
+                task.depopulate();
+                taskDisplay.populateDisplay(taskArray);
+                break;
+            case 1:
+                task.depopulate()
+                taskDisplay.populateDisplay(dueToday);
+                break;
+            case 2:
+                task.depopulate();
+                taskDisplay.populateDisplay(dueThisWeek);
+                break;
+            default:
+                console.log("default");
 
 
-       let dueToday = taskArray.filter(taskDue => taskDue.date == today);
-      
-
-
-       console.table(dueToday);
-       console.log(today);
-
-
+        }
+    }
     document.querySelector("#today").addEventListener("click", ()=>
     {
         // hide
-     if(todayBtn === false)
-        {   todayBtn = true;
-            inboxBtn = false;  
-            weekBtn = false;  
-            task.depopulate()
-            taskDisplay.populateDisplay(dueToday);
-            console.log(dueToday);
-        }
-    })
+        refreshPage(1);
+    });
 
-
-})();
-
-const inbox = (() => {
     document.querySelector("#inbox").addEventListener("click", ()=>
     {
-        if(inboxBtn === false)
-        {   todayBtn = false;
-            inboxBtn = true;
-            weekBtn = false;
-            task.depopulate();
-            taskDisplay.populateDisplay(taskArray);}
-            console.log("inbox populated");
+        refreshPage(0);
     });
+
+    document.querySelector("#thisWeek").addEventListener("click", ()=> 
+    {
+        refreshPage(2);         
+    });
+
+
+    return {
+        refreshPage,
+    }
+
 })();
 
-const thisWeek = (() => {
-
-    const today = format(new Date(),'yyyy-MM-dd');
-    let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
-    document.querySelector("#thisWeek").addEventListener("click", ()=> {
-        if(weekBtn === false)
-        {   todayBtn = false;
-            inboxBtn = false;
-            weekBtn = true;
-            task.depopulate();
-            taskDisplay.populateDisplay(dueThisWeek);
-        }
-
-        })
-    })();
 
 export { closeTask }
