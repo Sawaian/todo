@@ -1,4 +1,5 @@
 import { taskDisplay } from "./taskDom";
+import { changeTaskPage } from "./index";
 
 //create a get for the local storage. 
 
@@ -80,7 +81,7 @@ const task = (() => {
         // Stores array into localStorage. 
             localStorage.setItem('taskArray', JSON.stringify(taskArray));
                 depopulate();
-                    taskDisplay.populateDisplay(taskArray);
+                    changeTaskPage.refreshPage(changeTaskPage.currentPage);
             // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
             // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
 }

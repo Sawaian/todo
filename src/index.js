@@ -46,6 +46,8 @@ const closeTask = (() =>{
 
 const changeTaskPage = (() => {
 
+
+    let currentPage = 0;
     const today = format(new Date(),'yyyy-MM-dd');
     let dueToday = taskArray.filter(taskDue => taskDue.date == today);
     let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
@@ -74,24 +76,28 @@ const changeTaskPage = (() => {
     {
         // hide
         refreshPage(1);
+        currentPage = 1;
     });
 
     document.querySelector("#inbox").addEventListener("click", ()=>
     {
         refreshPage(0);
+        currentPage = 0;
     });
 
     document.querySelector("#thisWeek").addEventListener("click", ()=> 
     {
-        refreshPage(2);         
+        refreshPage(2);   
+        currentPage = 2;      
     });
 
 
     return {
         refreshPage,
+        currentPage,
     }
 
 })();
 
 
-export { closeTask }
+export { closeTask, changeTaskPage}
