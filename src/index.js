@@ -60,10 +60,12 @@ const changeTaskPage = (() => {
                 break;
             case 1:
                 task.depopulate()
+                let dueToday = taskArray.filter(taskDue => taskDue.date == today);
                 taskDisplay.populateDisplay(dueToday);
                 break;
             case 2:
                 task.depopulate();
+                dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
                 taskDisplay.populateDisplay(dueThisWeek);
                 break;
             default:

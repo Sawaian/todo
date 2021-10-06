@@ -240,6 +240,22 @@ html{
     margin: 10px;
 }
 
+.titleDisplay{
+    order: 1;
+}
+
+.description{
+    order: 2;
+}
+
+.date{
+    order: 3;
+}
+
+#removeBtn{
+    order: 4;
+}
+
 
 @media only screen and (max-width: 500px) {
     #content{
