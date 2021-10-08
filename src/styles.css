@@ -213,7 +213,7 @@ html{
     cursor: pointer;
 }
 .input{
-    width: 50%;
+    width: 100%;
     display: block;
     margin: 15px auto;
 }
