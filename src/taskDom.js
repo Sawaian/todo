@@ -121,7 +121,8 @@ const bgTask =(() => {
 
             function taskCloseButton(){
                 let close = document.createElement("div");
-                close.setAttribute("class", "close2");
+                close.setAttribute("class", "closeTask");
+                close.textContent = "+";
                     modalTask.appendChild(close);
             }
 
@@ -203,7 +204,7 @@ const taskDisplay = (() => {
                 titleDisplay.textContent = element.title; 
                 dueDate.textContent = element.date;
                 description.textContent = element.description;
-                completeTask.textContent = "remove";
+                completeTask.textContent = "completed";
      
 
            

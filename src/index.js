@@ -22,7 +22,7 @@ const newTask = (() => {
    // closes the task card.
 const closeTask = (() =>{
 
-    document.querySelector(".close2").addEventListener("click", ()=>{
+    document.querySelector(".closeTask").addEventListener("click", ()=>{
         console.log("clicked");
         clearDisplay();
     });

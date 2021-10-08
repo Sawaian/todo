@@ -82,8 +82,6 @@ const task = (() => {
             localStorage.setItem('taskArray', JSON.stringify(taskArray));
                 depopulate();
                     changeTaskPage.refreshPage(changeTaskPage.currentPage);
-            // localStorage.setItem('title' + taskNumber, JSON.stringify(newTask));
-            // localStorage.setItem('taskNumber', JSON.stringify(taskNumber));
 }
             
     })};

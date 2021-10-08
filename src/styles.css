@@ -56,13 +56,6 @@ html{
    
 }
 
-.close2{
-    width: 20px;
-    height: 20px;
-    border: solid;
-}
-
-
 .modalTask{
     display:flex;
     width: 500px;
@@ -85,8 +78,7 @@ html{
     text-align: center;
     padding: 10px;
     position:relative;
-    grid-template-columns:  1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 
@@ -200,7 +192,7 @@ html{
     grid-area: image;
 }
 
-.close{
+.close, .closeTask{
     position: absolute;
     top: 0;
     right: 14px;
