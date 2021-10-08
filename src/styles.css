@@ -110,10 +110,11 @@ html{
     display: block;
     margin: 15px auto;
     border-radius: 4px;
-    border: thin solid;
-    grid-template-areas: task;
+    border-bottom: thin solid;
+    padding-bottom: 10px;
     text-align: center;
     animation: fadeIn linear 0.5s;
+    font: bold 2px;
 }
 
 #sidebar{
