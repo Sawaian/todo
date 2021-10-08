@@ -58,6 +58,7 @@ const background = (() => {
 
 const taskForm = (() => {
     let form = document.createElement("div");
+        form.setAttribute("class", "submitTaskForm");
     
         // form.setAttribute("action", "submit.php");
 
