@@ -122,7 +122,7 @@ html{
     align-content: center;
     justify-content: flex-start;
     min-width: 0;
-    height: auto;
+    height: 100vh;
     order: 1;
 
 }
@@ -251,14 +251,21 @@ html{
 
 @media only screen and (max-width: 500px) {
     #content{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 0.4fr 2.0fr 1.2fr 1.2fr 1.2fr;
-        grid-template-areas: 
-        "sidebar"
-        "display"
-        "taskBody"
-        ;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sidebar{
+        display: flex;
+        flex-direction: column;
+        grid-area: sidebar;
+        background-color: lightgray;
+        padding:25px;
+        align-content: center;
+        justify-content: flex-start;
+        min-width: 0;
+        height: auto;
+        order: 1;
     }
     
 }
