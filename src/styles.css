@@ -113,6 +113,7 @@ html{
     border: thin solid;
     grid-template-areas: task;
     text-align: center;
+    animation: fadeIn linear 0.5s;
 }
 
 #sidebar{
@@ -137,10 +138,6 @@ html{
     grid-template-areas: none;
 }
 
-#display{
-    grid-area: display;
-}
-
 
 #inbox{
     display: grid;
@@ -149,6 +146,7 @@ html{
     grid-template-areas: "image . .";
     padding-left: 5px;
     cursor: pointer;
+    animation: fadeIn linear 0.3s;
 }
 
 #inboxImage{
@@ -165,6 +163,7 @@ html{
     /* max-width: 400px; */
     grid-template-areas: "image . .";
     padding-left: 5px;
+    border-radius: 10px;
 }
 
 #todayImage{
@@ -175,7 +174,7 @@ html{
    
 }
 
-#today #thisWeek #todayImage #calendarImage{
+#today, #thisWeek, #todayImage, #calendarImage{
     cursor: pointer;
 }
 
@@ -213,21 +212,20 @@ html{
     flex-direction: column;
     order: 2;
     flex: 2;
-    grid-area: display;
+    animation: fadeIn linear 1s;
 }
 
 #submit{
-    background-color: white;
+    background-color: cadetblue;
+    font: white;
     border-radius: 20px;
-    border: thick solid;
+    border: solid;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
-    max-width: 50px;
-    justify-content: center;
-    align-items: center;
+    width: 30px;
+    height: 20px;
     padding: 2px;
-    display: flex;
     position: absolute;
     bottom: 0;
     right: 14px;
@@ -271,3 +269,29 @@ html{
     }
     
 }
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+ 

@@ -52,31 +52,41 @@ const changeTaskPage = (() => {
     let dueToday = taskArray.filter(taskDue => taskDue.date == today);
     let dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
 
+    function sideButtonOpacity(){
+        sideBar.inbox.style.opacity = 1;
+        sideBar.today.style.opacity = 1;
+        sideBar.thisWeek.style.opacity = 1;
+    }
+
     function refreshPage(page){
         switch(page){
             case 0:
                 task.depopulate();
                 taskDisplay.populateDisplay(taskArray);
+                sideButtonOpacity();
+                sideBar.inbox.style.opacity = 0.6;
                 break;
             case 1:
                 task.depopulate()
                 let dueToday = taskArray.filter(taskDue => taskDue.date == today);
                 taskDisplay.populateDisplay(dueToday);
+                sideButtonOpacity();
+                sideBar.today.style.opacity = 0.6;
                 break;
             case 2:
                 task.depopulate();
                 dueThisWeek = taskArray.filter(taskDue => taskDue.date >= today && taskDue.date <= lastDayOfWeek);
                 taskDisplay.populateDisplay(dueThisWeek);
+                sideButtonOpacity();
+                sideBar.thisWeek.style.opacity = 0.6;
                 break;
             default:
                 console.log("default");
-
-
         }
     }
     document.querySelector("#today").addEventListener("click", ()=>
     {
-        // hide
+        //Adds the page of the clicked category.
         refreshPage(1);
         currentPage = 1;
     });
