@@ -66,12 +66,14 @@ const taskForm = (() => {
             title.setAttribute("name", "title");
             title.setAttribute("type", "text");
             title.setAttribute("id", "titleDom");
+            title.setAttribute("placeholder", "Title");
             title.setAttribute("class","input")
 
         let description = document.createElement("input");
             description.setAttribute("name", "desc");
             description.setAttribute("type", "text");
             description.setAttribute("id", "descDom");
+            description.setAttribute("placeholder", "Description");
             description.setAttribute("class","input")
 
         let submit = document.createElement("button");
