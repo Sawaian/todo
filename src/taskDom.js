@@ -5,50 +5,41 @@ import { closeTask } from "./index";
 const taskList = (() => {
     let content = document.getElementById("content");
         let display = document.createElement("ul");
-            display.setAttribute("id", "display");
-             content.appendChild(display);
+           let header = document.createElement("header");
+                 display.setAttribute("id", "display");
+             header.setAttribute("class", "header");
+            header.textContent = "The Due List"
+        content.appendChild(header);
+    content.appendChild(display);
 
-             let header = document.createElement("header");
-                header.setAttribute("class", "header");
-                header.textContent = "The Due List"
-                   content.appendChild(header);
-
-        return {
-            display,
-            content,
-        }
-    })();
+return {
+    display,
+    content,
+    }
+})();
 
 
 // Creates a background for the add task event.
 const background = (() => {
-
-
     let bgModal= document.createElement("div");
-            bgModal.setAttribute("name", "title");
-            bgModal.setAttribute("class", "bgModal");
-
-    let modal = document.createElement("div");
+        let modal = document.createElement("div");
+            let close = document.createElement("div");
+                let addTask = document.createElement("div");
+                    bgModal.setAttribute("name", "title");
+                bgModal.setAttribute("class", "bgModal");
             modal.setAttribute("class", "modal");
-
-
-    let close = document.createElement("div");
-            close.setAttribute("class","close");
-            close.textContent = "+";
-
-    let addTask = document.createElement("div");
+        close.setAttribute("class","close");
             addTask.setAttribute("class","addTask");
-            addTask.setAttribute("id","addTask");
-            addTask.textContent = "+";
-
-
-        taskList.content.appendChild(bgModal);
-        bgModal.appendChild(modal);
-        modal.appendChild(close);
+                addTask.setAttribute("id","addTask");
+                    addTask.textContent = "+";
+                        close.textContent = "+";
+                     taskList.content.appendChild(bgModal);
+                bgModal.appendChild(modal);
+            modal.appendChild(close);
         taskList.content.appendChild(addTask);
 
-        return{
-            modal,
+return  {
+    modal,
         }
 
 })();
@@ -58,51 +49,38 @@ const background = (() => {
 
 const taskForm = (() => {
     let form = document.createElement("div");
-        form.setAttribute("class", "submitTaskForm");
-    
-        // form.setAttribute("action", "submit.php");
+    let title = document.createElement("input");
+    let dueDate = document.createElement("input");
+    let description = document.createElement("input");
+    let submit = document.createElement("button");
+    let priorityDiv = document.createElement("div");
+    let priorityLow = document.createElement("button");
+    let priorityMedium = document.createElement("button");
+    let priorityHigh = document.createElement("button");
 
-        let title = document.createElement("input");
+            form.setAttribute("class", "submitTaskForm");
             title.setAttribute("name", "title");
             title.setAttribute("type", "text");
             title.setAttribute("id", "titleDom");
             title.setAttribute("placeholder", "Title");
             title.setAttribute("class","input")
-
-        let description = document.createElement("input");
             description.setAttribute("name", "desc");
             description.setAttribute("type", "text");
             description.setAttribute("id", "descDom");
             description.setAttribute("placeholder", "Description");
-            description.setAttribute("class","input")
-
-        let submit = document.createElement("button");
-            submit.setAttribute('id', "submit");
-            submit.textContent = "Add Task";
-
-        let priorityDiv = document.createElement("div");
-                priorityDiv.setAttribute("id","priorityDiv");
-
-        let priorityLow = document.createElement("button");
+            description.setAttribute("class","input")    
+                submit.setAttribute('id', "submit");
+                dueDate.setAttribute("type", "date");
+                dueDate.setAttribute("class", "date");
+                dueDate.setAttribute("id", "dueDate");
+                 priorityDiv.setAttribute("id","priorityDiv");
                  priorityLow.setAttribute('id', "low");
-                 priorityLow.textContent = "Low";
-
-        let priorityMedium = document.createElement("button");
                  priorityMedium.setAttribute('id', "medium");
-                 priorityMedium.textContent = "Medium";
-
-        let priorityHigh = document.createElement("button");
                  priorityHigh.setAttribute('id', "high");
-                 priorityHigh.textContent = "High";
-
-        let dueDate = document.createElement("input");
-                 dueDate.setAttribute("type", "date");
-                 dueDate.setAttribute("class", "date");
-                 dueDate.setAttribute("id", "dueDate");
-               
-
-                
-        
+                    priorityLow.textContent = "Low";
+                    priorityMedium.textContent = "Medium";
+                    priorityHigh.textContent = "High";
+                    submit.textContent = "Add Task";
             priorityDiv.appendChild(priorityLow);
             priorityDiv.appendChild(priorityMedium);
             priorityDiv.appendChild(priorityHigh);
@@ -183,10 +161,7 @@ const taskDisplay = (() => {
     for (let i = 0; i < 1; i++) {
         currentArray.forEach(element => {
 
-        
-
-        // const key = localStorage.key(i);
-
+            // const key = localStorage.key(i);
         let titleDisplay = document.createElement("li");
             
         titleDisplay.setAttribute("id", "title" + i);
@@ -214,11 +189,8 @@ const taskDisplay = (() => {
                 dueDate.textContent = element.date;
                 description.textContent = element.description;
                 completeTask.textContent = "completed";
-     
 
-           
                 // completeTask.setAttribute("class", "button");
-         
                 taskDivDisplay.taskDisplay.appendChild(dueDate);
                 taskDivDisplay.taskDisplay.appendChild(completeTask);
                 taskDivDisplay.taskDisplay.appendChild(titleDisplay);
@@ -251,9 +223,6 @@ const taskDisplay = (() => {
     }
 
 })();
-
-
-
 
 // Loads both of the dom elements.
 const taskDomGen = (() => {
