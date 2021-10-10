@@ -66,6 +66,11 @@ html{
 
 }
 
+#priorityDiv{
+    display:flex;
+    order: 3;
+}
+
 .modalTask{
     display:flex;
     width: 500px;
@@ -227,15 +232,15 @@ html{
 }
 
 #submit{
-    background-color: cadetblue;
+    background-color: rgb(141, 199, 201);
     font: white;
     border-radius: 20px;
-    border: solid;
+    border: thin solid;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 10px;
     font-weight: bold;
-    width: 30px;
-    height: 20px;
+    width: 100px;
+    height: 33px;
     padding: 2px;
     position: absolute;
     bottom: 0;

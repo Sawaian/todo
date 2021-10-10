@@ -78,6 +78,10 @@ const taskForm = (() => {
 
         let submit = document.createElement("button");
             submit.setAttribute('id', "submit");
+            submit.textContent = "Add Task";
+
+        let priorityDiv = document.createElement("div");
+                priorityDiv.setAttribute("id","priorityDiv");
 
         let priorityLow = document.createElement("button");
                  priorityLow.setAttribute('id', "low");
@@ -98,12 +102,14 @@ const taskForm = (() => {
                
 
                 
+        
+            priorityDiv.appendChild(priorityLow);
+            priorityDiv.appendChild(priorityMedium);
+            priorityDiv.appendChild(priorityHigh);
+            form.appendChild(priorityDiv);
             form.appendChild(title);
             form.appendChild(description);
             form.appendChild(submit);
-            form.appendChild(priorityLow);
-            form.appendChild(priorityMedium);
-            form.appendChild(priorityHigh);
             form.appendChild(dueDate);
             background.modal.appendChild(form);
 
