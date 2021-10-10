@@ -8,11 +8,7 @@ const sideBar = (() => {
     let inboxImage = document.createElement("img");
     let todayImage = document.createElement("img");
     let calendarImage = document.createElement("img");
-
-
-
-
-
+    
         sideBar.setAttribute("id", "sidebar");
         inbox.setAttribute("id", "inbox");
         inboxImage.setAttribute("id", "inboxImage");

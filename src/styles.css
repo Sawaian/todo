@@ -226,6 +226,7 @@ html{
 #display{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     order: 2;
     flex: 2;
     animation: fadeIn linear 1s;
