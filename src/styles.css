@@ -155,7 +155,7 @@ html{
 }
 
 
-#inbox{
+#inbox, #today, #thisWeek{
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr;
     /* max-width: 400px; */
@@ -165,21 +165,16 @@ html{
     animation: fadeIn linear 0.3s;
 }
 
+#thisWeek{
+    margin-bottom: 20px;
+}
+
 #inboxImage{
     display:block;
     width: 30px;
     height: auto;
     grid-area: image;
     cursor: pointer;
-}
-
-#today{
-    display: grid;
-    grid-template-columns: 0.3fr 1fr 1fr;
-    /* max-width: 400px; */
-    grid-template-areas: "image . .";
-    padding-left: 5px;
-    border-radius: 10px;
 }
 
 #todayImage{
@@ -194,13 +189,7 @@ html{
     cursor: pointer;
 }
 
-#thisWeek{
-    display: grid;
-    grid-template-columns: 0.3fr 1fr 1fr;
-    /* max-width: 400px; */
-    grid-template-areas: "image . .";
-    padding-left: 5px;
-}
+
 
 #calendarImage{
     display:block;

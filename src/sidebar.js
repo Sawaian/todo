@@ -8,17 +8,21 @@ const sideBar = (() => {
     let inboxImage = document.createElement("img");
     let todayImage = document.createElement("img");
     let calendarImage = document.createElement("img");
+   
     
         sideBar.setAttribute("id", "sidebar");
         inbox.setAttribute("id", "inbox");
-        inboxImage.setAttribute("id", "inboxImage");
-
         today.setAttribute("id", "today");
-        todayImage.setAttribute("id","todayImage");
-        calendarImage.setAttribute("id","calendarImage");
         thisWeek.setAttribute("id", "thisWeek");
+        projects.setAttribute("id", "projects")
+
         
-        projects.setAttribute("id", "projects");
+        todayImage.setAttribute("id","todayImage");
+        inboxImage.setAttribute("id", "inboxImage");
+        calendarImage.setAttribute("id","calendarImage");
+
+        
+       ;
         
         inboxImage.src = "Inbox.png";
         todayImage.src = "Today.png"
@@ -26,6 +30,7 @@ const sideBar = (() => {
         inbox.textContent = "Inbox";
         today.textContent = "Today";
         thisWeek.textContent ="This Week";
+        projects.textContent = "Projects";
 
         content.appendChild(sideBar);
         sideBar.appendChild(inbox);
