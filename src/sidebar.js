@@ -1,3 +1,5 @@
+import { add } from "date-fns";
+
 const sideBar = (() => {
     let content = document.getElementById("content");
     let sideBar = document.createElement("div");
@@ -54,5 +56,18 @@ const sideBar = (() => {
         }
 })();
 
+const projectDom = (() => { 
 
-export { sideBar }
+    let addProjectField = document.createElement("input");
+    addProjectField.setAttribute("class", "input");
+    addProjectField.setAttribute("id","projectInput");
+    sideBar.projects.appendChild(addProjectField);
+
+    return {
+        addProjectField,
+    }
+
+})();
+
+
+export { sideBar, projectDom }

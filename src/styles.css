@@ -154,6 +154,13 @@ html{
     grid-template-areas: none;
 }
 
+#projectInput{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border: solid;
+    display: none;
+}
 
 #inbox, #today, #thisWeek{
     display: grid;

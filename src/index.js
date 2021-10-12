@@ -2,6 +2,7 @@ import { bgTask, taskDivDisplay } from "./taskDom";
 import { task, taskArray } from "./taskForm";
 import { taskDisplay } from "./taskDom";
 import { sideBar  } from "./sidebar";
+import { project }  from "./project"
 import './styles.css';
 
 
