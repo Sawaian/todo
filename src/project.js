@@ -2,9 +2,23 @@ import { projectDom } from "./sidebar";
 
 const project = (() =>{
 
+    let projectArray = [];
+
     let projectClicked = 0;
 
-    function isProjectClick(){
+
+    if(localStorage.getItem('projectArray')){
+        projectArray = JSON.parse(localStorage.getItem('projectArray'));
+        console.log(projectArray);
+    }
+
+    function addProject(){
+
+        projectArray.push(newProject)
+        
+    }
+
+    function projectList(){
 
         if(projectClicked === 0){
             document.getElementById("projectInput").style.display = "flex";
@@ -19,7 +33,7 @@ const project = (() =>{
 
     document.getElementById("projects").addEventListener("click", () => {
        
-        isProjectClick();
+        projectList();
         console.log("project added.")
     });
 
