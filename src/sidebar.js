@@ -63,9 +63,6 @@ const projectDom = (() => {
     addProjectField.setAttribute("id","projectInput");
     sideBar.projects.appendChild(addProjectField);
 
-    return {
-        addProjectField,
-    }
 
 })();
 
