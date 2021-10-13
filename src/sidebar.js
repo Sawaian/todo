@@ -59,9 +59,14 @@ const sideBar = (() => {
 const projectDom = (() => { 
 
     let addProjectField = document.createElement("input");
-    addProjectField.setAttribute("class", "input");
-    addProjectField.setAttribute("id","projectInput");
-    sideBar.projects.appendChild(addProjectField);
+            addProjectField.setAttribute("class", "input");
+                addProjectField.setAttribute("id","projectInput");
+            sideBar.projects.appendChild(addProjectField);
+
+    let addProject = document.createElement("div");
+            addProject.setAttribute("id","addProject");
+            addProject.textContent = "+";
+                sideBar.projects.appendChild(addProject)
 
 
 })();

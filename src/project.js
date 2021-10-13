@@ -12,10 +12,10 @@ const project = (() =>{
         console.log(projectArray);
     }
 
-    function addProject(){
+    
 
+    function addProject(){
         projectArray.push(newProject)
-        
     }
 
     function projectList(){
@@ -23,6 +23,7 @@ const project = (() =>{
         if(projectClicked === 0){
             document.getElementById("projectInput").style.display = "flex";
             projectClicked = 1;
+            
         }
 
         else if (projectClicked === 1){
@@ -31,7 +32,7 @@ const project = (() =>{
         }
     }
 
-    document.getElementById("projects").addEventListener("click", () => {
+    document.getElementById("addProject").addEventListener("click", () => {
        
         projectList();
         console.log("project added.")

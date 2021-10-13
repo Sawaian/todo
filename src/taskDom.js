@@ -197,9 +197,7 @@ const taskDisplay = (() => {
                 taskDivDisplay.taskDisplay.appendChild(description);
             
 
-                // Removes the element task from the array.
-                // stores new array in local storage.
-
+                // Removes the element task from the array
                 document.getElementById("removeBtn").addEventListener("click", () => {
                     console.log("removed");
                         let index = currentArray.indexOf(element);

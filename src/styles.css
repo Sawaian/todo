@@ -71,6 +71,13 @@ html{
     order: 3;
 }
 
+#projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .modalTask{
     display:flex;
     width: 500px;
@@ -98,7 +105,7 @@ html{
 }
 
 
-.addTask{
+.addTask, #addProject{
     background-color: white;
     border-radius: 20px;
     border: thin solid;
@@ -106,14 +113,15 @@ html{
     font-size: 20px;
     font-weight: bold;
     max-width: 24px;
-    justify-content: center;
-    align-items: center;
     padding: 2px;
     display: flex;
     position: absolute;
+    margin: 10px;
+}
+
+.addTask{
     bottom: 0;
     right: 14px;
-    margin: 10px;
 }
 
 .taskDisplay{
