@@ -115,13 +115,13 @@ html{
     max-width: 24px;
     padding: 2px;
     display: flex;
-    position: absolute;
     margin: 10px;
 }
 
 .addTask{
     bottom: 0;
     right: 14px;
+    position: absolute;
 }
 
 .taskDisplay{
