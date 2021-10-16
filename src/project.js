@@ -12,7 +12,7 @@ const project = (() =>{
         console.log(projectArray);
     }
 
-    
+
 
     function addProject(){
         projectArray.push(newProject)
@@ -38,5 +38,22 @@ const project = (() =>{
         console.log("project added.")
     });
 
+
+})();
+
+const newProjectName = (() => {
+
+    let projectName;
+
+    document.getElementById("projectInput").addEventListener("keyup", function(event){
+        if(event.code === 'Enter'){
+            projectName = document.getElementById("projectInput").value;
+            projectLog();
+        }
+    });
+
+    function projectLog(){
+        console.log(projectName);
+    }
 
 })();
