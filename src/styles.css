@@ -234,6 +234,7 @@ html{
     order: 2;
     flex: 2;
     animation: fadeIn linear 1s;
+    max-height: 90vh;
 }
 
 #submit{
