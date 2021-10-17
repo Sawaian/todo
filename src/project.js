@@ -14,7 +14,7 @@ const project = (() =>{
 
 
 
-    function addProject(){
+    function addProject(newProject){
         projectArray.push(newProject)
     }
 
@@ -48,12 +48,13 @@ const newProjectName = (() => {
     document.getElementById("projectInput").addEventListener("keyup", function(event){
         if(event.code === 'Enter'){
             projectName = document.getElementById("projectInput").value;
-            projectLog();
+            project.addProject(projectName)
         }
     });
 
     function projectLog(){
         console.log(projectName);
+        
     }
 
 })();

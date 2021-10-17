@@ -164,7 +164,7 @@ html{
 
 #projectInput{
     display: flex;
-    height: 100px;
+    height: auto;
     width: 100px;
     border: solid;
     display: none;

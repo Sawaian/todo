@@ -68,6 +68,8 @@ const projectDom = (() => {
             addProject.textContent = "+";
                 sideBar.projects.appendChild(addProject)
 
+    
+
 
 })();
 
