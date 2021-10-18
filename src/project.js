@@ -12,7 +12,7 @@ const project = (() =>{
         console.log(projectArray);
     }
 
-
+    
 
     function addProject(newProject){
         projectArray.push(newProject)
@@ -40,6 +40,16 @@ const project = (() =>{
 
 
 })();
+
+const projectArrayObj = (title) => {
+    let projectTitle = title;
+    let array = [];
+
+    return {
+        projectTitle,
+        array,
+    }
+}
 
 const newProjectName = (() => {
 
