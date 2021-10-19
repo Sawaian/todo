@@ -67,6 +67,7 @@ const newProjectName = (() => {
             let newProject =  projectArrayObj(projectName);
             project.projectArray.push(newProject);
             loadProjects.loadProjectList();
+            
         }
     });
 
@@ -85,10 +86,17 @@ const loadProjects = (() => {
                 projectName.setAttribute("class", "projectFile");
                 projectName.textContent = element.projectTitle;
                     sideBar.projects.appendChild(projectName);
+            
 
-                
+            // This allows us to access the particular array of the clicked project.
+            // Since all projects are user generated, we need a way to access
+            // specific arrays assigned to the user named projects. 
+            // This allows the users to specify which array they can pick.
+            projectName.addEventListener('click', ()=> { console.log(element.projectTitle)})
+    
         });
     }
+
 
     return {
         loadProjectList,
