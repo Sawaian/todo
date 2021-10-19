@@ -1,4 +1,5 @@
-import { projectDom } from "./sidebar";
+import { projectDom, sideBar } from "./sidebar";
+
 
 const project = (() =>{
 
@@ -38,6 +39,11 @@ const project = (() =>{
         console.log("project added.")
     });
 
+    return {
+        projectArray,
+        
+    }
+
 
 })();
 
@@ -58,7 +64,9 @@ const newProjectName = (() => {
     document.getElementById("projectInput").addEventListener("keyup", function(event){
         if(event.code === 'Enter'){
             projectName = document.getElementById("projectInput").value;
-            project.addProject(projectName)
+            let newProject =  projectArrayObj(projectName);
+            project.projectArray.push(newProject);
+            loadProjects.loadProjectList();
         }
     });
 
@@ -67,4 +75,22 @@ const newProjectName = (() => {
         
     }
 
+})();
+
+const loadProjects = (() => {
+    //Loads the user created projects underneath the Project tab on the sidebar.
+    function loadProjectList () {
+       project.projectArray.forEach(element => {
+            let projectName = document.createElement("div");
+                projectName.setAttribute("class", "projectFile");
+                projectName.textContent = element.projectTitle;
+                    sideBar.projects.appendChild(projectName);
+
+                
+        });
+    }
+
+    return {
+        loadProjectList,
+    }
 })();

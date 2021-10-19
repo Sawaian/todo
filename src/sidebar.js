@@ -74,4 +74,22 @@ const projectDom = (() => {
 })();
 
 
-export { sideBar, projectDom }
+
+const loadProjects = (() => {
+    //Loads the user created projects underneath the Project tab on the sidebar.
+    function loadProjectList () {
+       project.projectArray.forEach(element => {
+            let projectName = document.createElement("div");
+                projectName.setAttribute("class", "projectFile");
+                projectName.textContent = element;
+                    sideBar.projects.appendChild(projectName);
+        });
+    }
+
+    return {
+        loadProjectList,
+    }
+})();
+
+
+export { sideBar, projectDom, loadProjects }
