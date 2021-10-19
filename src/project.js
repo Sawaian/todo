@@ -59,8 +59,11 @@ const projectArrayObj = (title) => {
 
 const newProjectName = (() => {
 
+    let currentProject;
+
     let projectName;
 
+    // stores the value of the project input field into an object. 
     document.getElementById("projectInput").addEventListener("keyup", function(event){
         if(event.code === 'Enter'){
             projectName = document.getElementById("projectInput").value;
@@ -74,6 +77,10 @@ const newProjectName = (() => {
     function projectLog(){
         console.log(projectName);
         
+    }
+
+    return {
+        currentProject,
     }
 
 })();
@@ -93,6 +100,11 @@ const loadProjects = (() => {
             // specific arrays assigned to the user named projects. 
             // This allows the users to specify which array they can pick.
             projectName.addEventListener('click', ()=> { console.log(element.projectTitle)})
+
+            projectName.addEventListener('click', ()=> { 
+                
+                newProjectName.currentProject = element;
+                console.log("this is for changing the current value of the selected object.")})
     
         });
     }
@@ -102,3 +114,5 @@ const loadProjects = (() => {
         loadProjectList,
     }
 })();
+
+export { newProjectName }
