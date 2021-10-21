@@ -5,6 +5,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 0.5fr repeat(4, 1fr);
   margin-top: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *{
@@ -160,6 +161,16 @@ html{
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-area: taskBody;
     grid-template-areas: none;
+}
+
+#projectLabel{
+    font-size: 30px;
+    border-bottom: solid;
+    margin-bottom: 5px;
+}
+
+#listOfProjects{
+    list-style: none;
 }
 
 #projectInput{
