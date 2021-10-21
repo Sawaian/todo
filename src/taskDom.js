@@ -196,6 +196,22 @@ const taskDisplay = (() => {
                 taskDivDisplay.taskDisplay.appendChild(completeTask);
                 taskDivDisplay.taskDisplay.appendChild(titleDisplay);
                 taskDivDisplay.taskDisplay.appendChild(description);
+
+                //Edits a title after it is clicked on.
+                titleDisplay.addEventListener('click', ()=>{
+                    titleDisplay.remove();
+                    titleDisplay = document.createElement("input");
+                    titleDisplay.setAttribute("id", "titleDisplay");
+                    titleDisplay.textContent = element.title;
+                    taskDivDisplay.taskDisplay.appendChild(titleDisplay);
+
+                    document.getElementById("titleDisplay").addEventListener("keyup", function(event){
+                        if(event.code === 'Enter'){
+                         element.title = document.getElementById("titleDisplay").value;
+                         console.log(element.title);
+                          }
+                    });
+                });
             
 
                 // Removes the element task from the array
