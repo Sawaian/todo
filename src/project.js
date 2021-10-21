@@ -1,4 +1,5 @@
 import { projectDom, sideBar } from "./sidebar";
+import { task } from "./taskForm";
 
 
 const project = (() =>{
@@ -59,7 +60,6 @@ const projectArrayObj = (title) => {
 
 const newProjectName = (() => {
 
-    let currentProject;
 
     let projectName;
 
@@ -79,13 +79,13 @@ const newProjectName = (() => {
         
     }
 
-    return {
-        currentProject,
-    }
 
 })();
 
 const loadProjects = (() => {
+
+    let currentProject = 'fish';
+
     //Loads the user created projects underneath the Project tab on the sidebar.
     function loadProjectList () {
        project.projectArray.forEach(element => {
@@ -102,9 +102,14 @@ const loadProjects = (() => {
             projectName.addEventListener('click', ()=> { console.log(element.projectTitle)})
 
             projectName.addEventListener('click', ()=> { 
+
                 
-                newProjectName.currentProject = element;
+                task.depopulate();
+
                 console.log("this is for changing the current value of the selected object.")})
+                
+                return currentProject = 'fuckyou';
+                
     
         });
     }
@@ -112,7 +117,8 @@ const loadProjects = (() => {
 
     return {
         loadProjectList,
+        currentProject,
     }
 })();
 
-export { newProjectName }
+export { newProjectName, loadProjects }

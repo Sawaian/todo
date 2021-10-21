@@ -1,5 +1,6 @@
 import { taskDisplay } from "./taskDom";
 import { changeTaskPage } from "./index";
+import { loadProjects } from "./project";
 
 //create a get for the local storage. 
 
@@ -22,7 +23,7 @@ const task = (() => {
     }
 
 // constructor for objects
-  const taskObj = (title, description, date) => {
+  const taskObj = (title, description, date, project) => {
 
     let priority;
 
@@ -31,6 +32,7 @@ const task = (() => {
         description,
         date,
         priority,
+        project,
     }
 }
 
@@ -72,10 +74,22 @@ const task = (() => {
       else 
        {
         let newTask = null;
-            newTask = taskObj(title, description, taskDate); 
+           
+
+                if(loadProjects.currentProject != null){
+                    let project = loadProjects.currentProject;
+                    newTask = taskObj(title, description, taskDate, project); 
+                    newTask.priority = priorityChosen;
+                    console.log(newTask.project);
+                }
+                else {
+                newTask = taskObj(title, description, taskDate); 
                 newTask.priority = priorityChosen;
                     taskArray.push(newTask)
+                }
                 document.querySelector(".bgModal").style.display = 'none';
+
+             
         
         // Stores values into task obj.
         // Stores array into localStorage. 

@@ -2,7 +2,7 @@ import { bgTask, taskDivDisplay } from "./taskDom";
 import { task, taskArray } from "./taskForm";
 import { taskDisplay } from "./taskDom";
 import { sideBar  } from "./sidebar";
-import { newProjectName } from "./project";
+import { loadProjects, newProjectName } from "./project";
 import './styles.css';
 
 
@@ -14,7 +14,7 @@ const lastDayOfWeek = require('date-fns/lastDayOfWeek')
 const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
            document.querySelector(".bgModal").style.display = 'flex';
-           console.log(newProjectName.currentProject)
+            console.log(loadProjects.currentProject);
        });
        document.querySelector(".close").addEventListener("click", ()=>{
            document.querySelector(".bgModal").style.display = 'none';
