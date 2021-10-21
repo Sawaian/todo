@@ -19,13 +19,13 @@ const project = (() =>{
     function projectList(){
 
         if(projectClicked === 0){
-            document.getElementById("projectInput").style.display = "flex";
+            openAndCloseProjectInput.openProjectInput();
             projectClicked = 1;
             
         }
 
         else if (projectClicked === 1){
-            document.getElementById("projectInput").style.display = "none";
+            openAndCloseProjectInput.closeProjectInput();
             projectClicked = 0;
         }
     }
@@ -42,6 +42,21 @@ const project = (() =>{
     }
 
 
+})();
+
+const openAndCloseProjectInput = (() =>{
+    function openProjectInput(){
+        document.getElementById("projectInput").style.display = "flex";
+    }
+
+    function closeProjectInput(){
+        document.getElementById("projectInput").style.display = "none";
+    }
+
+    return {
+        openProjectInput,
+        closeProjectInput,
+    }
 })();
 
 const projectArrayObj = (title) => {
@@ -62,11 +77,22 @@ const newProjectName = (() => {
     // stores the value of the project input field into an object. 
     document.getElementById("projectInput").addEventListener("keyup", function(event){
         if(event.code === 'Enter'){
+
             projectName = document.getElementById("projectInput").value;
+
+            if(projectName == ""){
+                openAndCloseProjectInput.closeProjectInput();
+                console.log("You need a project Name");
+            }
+
+            else{
+            
             let newProject =  projectArrayObj(projectName);
             project.projectArray.push(newProject);
             loadProjects.loadProjectList();
-            
+            openAndCloseProjectInput.closeProjectInput();
+
+            }
         }
     });
 
@@ -74,7 +100,6 @@ const newProjectName = (() => {
         console.log(projectName);
         
     }
-
 
 })();
 
