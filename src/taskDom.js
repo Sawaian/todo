@@ -170,13 +170,19 @@ const taskDisplay = (() => {
 
         // console.log(`${key}: ${localStorage.getItem(key)}`);
 
+        function titleDisplayGen(){
+            let titleDisplay = document.createElement("div");
+            titleDisplay.textContent = element.title; 
+
+        }
+
         titleDisplay.addEventListener('click',()=>{
 
    
      
             openTask.openTask();
 
-            let titleDisplay = document.createElement("div");
+            
             let dueDate = document.createElement("div");
             let completeTask = document.createElement("button");
             let description = document.createElement("div");
@@ -186,7 +192,7 @@ const taskDisplay = (() => {
                 dueDate.setAttribute("class", "date");
                 completeTask.setAttribute("id", "removeBtn");
 
-                titleDisplay.textContent = element.title; 
+            
                 dueDate.textContent = element.date;
                 description.textContent = element.description;
                 completeTask.textContent = "completed";
@@ -208,7 +214,7 @@ const taskDisplay = (() => {
                     document.getElementById("titleDisplay").addEventListener("keyup", function(event){
                         if(event.code === 'Enter'){
                          element.title = document.getElementById("titleDisplay").value;
-                         console.log(element.title);
+                         titleDisplay.remove();
                           }
                     });
                 });
