@@ -15,11 +15,6 @@ const project = (() =>{
         console.log(projectArray);
     }
 
-    
-
-    function addProject(newProject){
-        projectArray.push(newProject)
-    }
 
     function projectList(){
 
@@ -85,15 +80,25 @@ const newProjectName = (() => {
 
 const loadProjects = (() => {
 
+    function depopulate(){
+        let display = document.getElementById("listOfProjects");
+            while(display.firstChild){
+            display.removeChild(display.firstChild);
+        }
+    }
+
     let currentProject;
 
     //Loads the user created projects underneath the Project tab on the sidebar.
     function loadProjectList () {
+
+        depopulate();
        project.projectArray.forEach(element => {
-            let projectName = document.createElement("div");
+            let projectName = document.createElement("li");
                 projectName.setAttribute("class", "projectFile");
                 projectName.textContent = element.projectTitle;
-                    sideBar.projects.appendChild(projectName);
+                    projectDom.listOfProjects.appendChild(projectName);
+                    localStorage.setItem('projectArray', JSON.stringify(project.projectArray));
             
 
             // This allows us to access the particular array of the clicked project.

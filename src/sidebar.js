@@ -58,6 +58,11 @@ const sideBar = (() => {
 
 const projectDom = (() => { 
 
+    let listOfProjects = document.createElement("ul");
+            listOfProjects.setAttribute("class", "lists");
+            listOfProjects.setAttribute("id","listOfProjects");
+            sideBar.projects.appendChild(listOfProjects)
+
     let addProjectField = document.createElement("input");
             addProjectField.setAttribute("class", "input");
                 addProjectField.setAttribute("id","projectInput");
@@ -67,6 +72,10 @@ const projectDom = (() => {
             addProject.setAttribute("id","addProject");
             addProject.textContent = "+";
                 sideBar.projects.appendChild(addProject)
+
+        return {
+            listOfProjects,
+        }
 
     
 

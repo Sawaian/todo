@@ -10,6 +10,7 @@ const {format} = require('date-fns');
 const lastDayOfWeek = require('date-fns/lastDayOfWeek')
 
     task.taskStorage();
+    loadProjects.loadProjectList();
 
 const newTask = (() => {
        document.getElementById("addTask").addEventListener("click", ()=>{
