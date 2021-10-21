@@ -84,7 +84,7 @@ const newProjectName = (() => {
 
 const loadProjects = (() => {
 
-    let currentProject = 'fish';
+    let currentProject;
 
     //Loads the user created projects underneath the Project tab on the sidebar.
     function loadProjectList () {
@@ -102,18 +102,16 @@ const loadProjects = (() => {
             projectName.addEventListener('click', ()=> { console.log(element.projectTitle)})
 
             projectName.addEventListener('click', ()=> { 
-
                 
                 task.depopulate();
 
                 console.log("this is for changing the current value of the selected object.")})
                 
-                return currentProject = 'fuckyou';
+                loadProjects.currentProject = element.projectTitle;
                 
     
         });
     }
-
 
     return {
         loadProjectList,
