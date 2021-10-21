@@ -1,5 +1,6 @@
 import { projectDom, sideBar } from "./sidebar";
-import { task } from "./taskForm";
+import { task, taskArray } from "./taskForm";
+import { taskDisplay } from "./taskDom";
 
 
 const project = (() =>{
@@ -105,9 +106,13 @@ const loadProjects = (() => {
                 
                 task.depopulate();
 
-                console.log("this is for changing the current value of the selected object.")})
                 
                 loadProjects.currentProject = element.projectTitle;
+
+                let thisProjectList = taskArray.filter(projectName=> projectName.project == element.projectTitle);
+                taskDisplay.populateDisplay(thisProjectList);
+                console.log("this is for changing the current value of the selected object.")})
+                
                 
     
         });
