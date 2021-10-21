@@ -77,10 +77,12 @@ const task = (() => {
            
 
                 if(loadProjects.currentProject != null){
+
                     let project = loadProjects.currentProject;
-                    newTask = taskObj(title, description, taskDate, project); 
-                    newTask.priority = priorityChosen;
-                    console.log(newTask.project);
+                        newTask = taskObj(title, description, taskDate, project); 
+                        newTask.priority = priorityChosen;
+                        console.log(newTask.project);
+                        taskArray.push(newTask)
                 }
                 else {
                 newTask = taskObj(title, description, taskDate); 
