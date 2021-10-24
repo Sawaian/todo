@@ -96,14 +96,19 @@ const newProjectName = (() => {
         }
     });
 
-    function projectLog(){
-        console.log(projectName);
-        
-    }
 
 })();
 
 const loadProjects = (() => {
+
+    function clearProjectStyles(){
+        const projectStyles = document.querySelectorAll(".projectFile");
+        for(let i = 0; i < projectStyles.length; i++){
+            projectStyles[i].style.background = "lightgray";
+            projectStyles[i].style.opacity = "80%";
+            projectStyles[i].style.fontSize = "16px";
+        }
+    }
 
     function depopulate(){
         let display = document.getElementById("listOfProjects");
@@ -132,11 +137,13 @@ const loadProjects = (() => {
             // This allows the users to specify which array they can pick.
             projectName.addEventListener('click', ()=> { console.log(element.projectTitle)})
 
-            projectName.addEventListener('click', ()=> { 
-                
-                task.depopulate();
+            projectName.addEventListener('click', ()=> {
 
-                
+                clearProjectStyles();
+                projectName.style.background  = "gray";
+                projectName.style.opacity = "80%";
+                projectName.style.fontSize = "20px";
+                task.depopulate();
                 loadProjects.currentProject = element.projectTitle;
 
                 let thisProjectList = taskArray.filter(projectName=> projectName.project == element.projectTitle);

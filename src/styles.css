@@ -79,6 +79,10 @@ html{
     align-items: center;
 }
 
+.projectFile{
+    padding: 5px;
+}
+
 .modalTask{
     display:flex;
     width: 500px;
