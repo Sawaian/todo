@@ -175,6 +175,8 @@ html{
 
 #listOfProjects{
     list-style: none;
+    display: flex;
+    flex-flow: column;
 }
 
 #projectInput{

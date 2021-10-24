@@ -13,13 +13,23 @@ const lastDayOfWeek = require('date-fns/lastDayOfWeek')
     loadProjects.loadProjectList();
 
 const newTask = (() => {
+
+    function bgModalOpen(){
+        document.querySelector(".bgModal").style.display = 'flex';
+        document.querySelector("#listOfProjects").style.display = 'none';
+    }
        document.getElementById("addTask").addEventListener("click", ()=>{
-           document.querySelector(".bgModal").style.display = 'flex';
+           bgModalOpen();
             console.log(loadProjects.currentProject);
        });
        document.querySelector(".close").addEventListener("click", ()=>{
            document.querySelector(".bgModal").style.display = 'none';
+           document.querySelector("#listOfProjects").style.display = 'flex';
        });
+
+       return {
+           bgModal,
+       }
    })();
 
    // closes the task card.
@@ -115,4 +125,4 @@ const changeTaskPage = (() => {
 })();
 
 
-export { closeTask, changeTaskPage}
+export { closeTask, changeTaskPage, newTask}

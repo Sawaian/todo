@@ -1,6 +1,7 @@
 import { projectDom, sideBar } from "./sidebar";
 import { task, taskArray } from "./taskForm";
 import { taskDisplay } from "./taskDom";
+import { newTask } from ".";
 
 
 const project = (() =>{
@@ -79,10 +80,10 @@ const newProjectName = (() => {
         if(event.code === 'Enter'){
 
             projectName = document.getElementById("projectInput").value;
-
+    
+            // Closes if project input field is blankt
             if(projectName == ""){
                 openAndCloseProjectInput.closeProjectInput();
-                console.log("You need a project Name");
             }
 
             else{
@@ -128,12 +129,18 @@ const loadProjects = (() => {
             //creates a div for each project in the array.
             let projectName = document.createElement("li");
                 projectName.setAttribute("class", "projectFile");
-                projectName.textContent = element.projectTitle;project.projectArray.forEach(element => {}
+                projectName.textContent = element.projectTitle;
                     projectDom.listOfProjects.appendChild(projectName);
+
             // stores the project array in localStorage.
                     localStorage.setItem('projectArray', JSON.stringify(project.projectArray));
-            
 
+                projectName.ondblclick = function (){
+                    projectName.style.display = "none";
+                    newTask.bgModalOpen()
+                    
+                    };
+            
 
             // This allows us to access the particular array of the clicked project.
             // Since all projects are user generated, we need a way to access
@@ -165,16 +172,6 @@ const loadProjects = (() => {
     }
 })();
 
-const removeProjects = (() => {
 
-    let projectFiles = document.querySelectorAll(".projectFile");
-    for(let i = 0; i < projectFiles.length; i++){
-        projectFiles[i].addEventListener("dblclick", ()=> { alert("Project Double Clicked")});
-    }
-
-    return{
-
-    }
-})();
 
 export { newProjectName, loadProjects }
