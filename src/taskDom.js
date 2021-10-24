@@ -176,15 +176,18 @@ const taskDisplay = (() => {
             let dueDate = document.createElement("div");
             let completeTask = document.createElement("button");
             let description = document.createElement("div");
+            let priority = document.createElement("div");
 
                 titleDisplay.setAttribute("class", "titleDisplay");
                 description.setAttribute("class", "description");
                 dueDate.setAttribute("class", "date");
                 completeTask.setAttribute("id", "removeBtn");
+                priority.setAttribute("id", "priorityLevel");
 
                 titleDisplay.textContent = element.title; 
                 dueDate.textContent = element.date;
                 description.textContent = element.description;
+                priority.textContent = element.priority;
                 completeTask.textContent = "completed";
 
                 // completeTask.setAttribute("class", "button");
@@ -192,6 +195,7 @@ const taskDisplay = (() => {
                 taskDivDisplay.taskDisplay.appendChild(completeTask);
                 taskDivDisplay.taskDisplay.appendChild(titleDisplay);
                 taskDivDisplay.taskDisplay.appendChild(description);
+                taskDivDisplay.taskDisplay.appendChild(priority);
 
                 //Edits a title after it is clicked on.
                 titleDisplay.addEventListener('click', ()=>{

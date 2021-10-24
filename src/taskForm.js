@@ -75,8 +75,6 @@ const task = (() => {
       else 
        {
         let newTask = null;
-           
-
                 if(loadProjects.currentProject != null){
 
                     let project = loadProjects.currentProject;
