@@ -124,12 +124,16 @@ const loadProjects = (() => {
 
         depopulate();
        project.projectArray.forEach(element => {
+
+            //creates a div for each project in the array.
             let projectName = document.createElement("li");
                 projectName.setAttribute("class", "projectFile");
-                projectName.textContent = element.projectTitle;
+                projectName.textContent = element.projectTitle;project.projectArray.forEach(element => {}
                     projectDom.listOfProjects.appendChild(projectName);
+            // stores the project array in localStorage.
                     localStorage.setItem('projectArray', JSON.stringify(project.projectArray));
             
+
 
             // This allows us to access the particular array of the clicked project.
             // Since all projects are user generated, we need a way to access
@@ -158,6 +162,18 @@ const loadProjects = (() => {
     return {
         loadProjectList,
         currentProject,
+    }
+})();
+
+const removeProjects = (() => {
+
+    let projectFiles = document.querySelectorAll(".projectFile");
+    for(let i = 0; i < projectFiles.length; i++){
+        projectFiles[i].addEventListener("dblclick", ()=> { alert("Project Double Clicked")});
+    }
+
+    return{
+
     }
 })();
 
