@@ -42,7 +42,6 @@ const project = (() =>{
         
     }
 
-
 })();
 
 const openAndCloseProjectInput = (() =>{
@@ -71,10 +70,8 @@ const projectArrayObj = (title) => {
 }
 
 const newProjectName = (() => {
-
-
+    
     let projectName;
-
     // stores the value of the project input field into an object. 
     document.getElementById("projectInput").addEventListener("keyup", function(event){
         if(event.code === 'Enter'){
@@ -92,12 +89,9 @@ const newProjectName = (() => {
             project.projectArray.push(newProject);
             loadProjects.loadProjectList();
             openAndCloseProjectInput.closeProjectInput();
-
             }
         }
     });
-
-
 })();
 
 const loadProjects = (() => {
@@ -136,9 +130,12 @@ const loadProjects = (() => {
                     localStorage.setItem('projectArray', JSON.stringify(project.projectArray));
 
                 projectName.ondblclick = function (){
-                    projectName.style.display = "none";
-                    newTask.bgModalOpen()
-                    
+                    projectName.remove();
+                    let index = project.projectArray.indexOf(element);
+                             if (index > -1) {
+                                  project.projectArray.splice(index, 1);
+                    }
+
                     };
             
 
@@ -159,10 +156,7 @@ const loadProjects = (() => {
 
                 let thisProjectList = taskArray.filter(projectName=> projectName.project == element.projectTitle);
                 taskDisplay.populateDisplay(thisProjectList);
-                console.log("this is for changing the current value of the selected object.")})
-                
-                
-    
+            });
         });
     }
 

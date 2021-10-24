@@ -177,6 +177,8 @@ html{
     list-style: none;
     display: flex;
     flex-flow: column;
+    overflow-wrap:break-word;
+    max-width: 250px;
 }
 
 #projectInput{

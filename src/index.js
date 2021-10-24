@@ -18,18 +18,20 @@ const newTask = (() => {
         document.querySelector(".bgModal").style.display = 'flex';
         document.querySelector("#listOfProjects").style.display = 'none';
     }
+
+    function bgModalClose(){
+        document.querySelector(".bgModal").style.display = 'none';
+        document.querySelector("#listOfProjects").style.display = 'flex';
+    }
        document.getElementById("addTask").addEventListener("click", ()=>{
            bgModalOpen();
             console.log(loadProjects.currentProject);
        });
        document.querySelector(".close").addEventListener("click", ()=>{
-           document.querySelector(".bgModal").style.display = 'none';
-           document.querySelector("#listOfProjects").style.display = 'flex';
+           bgModalClose();
+        
        });
 
-       return {
-           bgModal,
-       }
    })();
 
    // closes the task card.

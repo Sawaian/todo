@@ -241,6 +241,8 @@ const taskDisplay = (() => {
 
 })();
 
+
+
 // Loads both of the dom elements.
 const taskDomGen = (() => {
     taskForm();
