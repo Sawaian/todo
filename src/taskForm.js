@@ -1,5 +1,5 @@
 import { taskDisplay } from "./taskDom";
-import { changeTaskPage } from "./index";
+import { changeTaskPage, newTask } from "./index";
 import { loadProjects } from "./project";
 
 //create a get for the local storage. 
@@ -66,6 +66,7 @@ const task = (() => {
         let title = document.getElementById("titleDom").value;
         let description = document.getElementById("descDom").value;
         let taskDate = document.getElementById("dueDate").value;
+        newTask.bgModalClose();
 
     if(title == ""){
            alert("Input title");

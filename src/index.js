@@ -32,6 +32,10 @@ const newTask = (() => {
         
        });
 
+       return{
+           bgModalClose,
+       }
+
    })();
 
    // closes the task card.

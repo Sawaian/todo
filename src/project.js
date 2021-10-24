@@ -132,9 +132,11 @@ const loadProjects = (() => {
                 projectName.ondblclick = function (){
                     projectName.remove();
                     let index = project.projectArray.indexOf(element);
-                             if (index > -1) {
-                                  project.projectArray.splice(index, 1);
-                    }
+                    if (index > -1) {
+                        project.projectArray.splice(index, 1);
+                        localStorage.setItem('projectArray', JSON.stringify(project.projectArray));
+           }
+
 
                     };
             
